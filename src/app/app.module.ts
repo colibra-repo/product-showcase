@@ -7,11 +7,19 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {RoutingModule} from './routing/routing.module';
 import {MaterialModule} from './material/material.module';
 import {HeaderComponent} from './header/header.component';
+import {DesktopMenuComponent} from './menu/desktop-menu/desktop-menu.component';
+import {TasksComponent} from './tasks/tasks.component';
+import {HistoryComponent} from './history/history.component';
+import {TrainingsComponent} from './trainings/trainings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    DesktopMenuComponent,
+    TasksComponent,
+    HistoryComponent,
+    TrainingsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,44 @@
+@import '../../../styles.scss';
+
+@media only screen and (min-width: 960px) {
+  .tab {
+    padding-bottom: 20px;
+  }
+}
+
+.tabs {
+  position: relative;
+  .ink-slider {
+    content: "";
+    width: 12ch;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 2px solid mat-color($colibra-green-palette, 500);
+    transition: left .25s;
+  }
+  & .tab:first-child.active ~ .ink-slider {
+    left: 0;
+  }
+  & .tab:nth-child(2).active ~ .ink-slider {
+    left: 12ch;
+  }
+  & .tab:nth-child(3).active ~ .ink-slider {
+    left: calc(12ch * 2);
+  }
+}
+
+.tab {
+  outline: none;
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  width: 12ch;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
