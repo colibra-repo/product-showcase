@@ -13,6 +13,7 @@ import {HistoryComponent} from './history/history.component';
 import {TrainingsComponent} from './trainings/trainings.component';
 import {MobileMenuComponent} from './menu/mobile-menu/mobile-menu.component';
 import {ProfileMenuComponent} from './profile-menu/profile-menu.component';
+import {TaskCardComponent} from './tasks/task-card/task-card.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {ProfileMenuComponent} from './profile-menu/profile-menu.component';
     HistoryComponent,
     TrainingsComponent,
     MobileMenuComponent,
-    ProfileMenuComponent
+    ProfileMenuComponent,
+    TaskCardComponent
   ],
   imports: [
     BrowserModule,
