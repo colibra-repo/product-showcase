@@ -1,0 +1,22 @@
+@media only screen and (min-width: 960px) {
+  .settings {
+    padding-bottom: 20px;
+  }
+}
+
+.settings .profile {
+  .mat-icon.avatar {
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .username, .level {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .level {
+    opacity: 0.5;
+  }
+}
