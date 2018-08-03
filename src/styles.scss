@@ -67,3 +67,24 @@ $colibra-app-warn: mat-palette($mat-red);
 $colibra-app-theme: mat-light-theme($colibra-app-primary, $colibra-app-accent, $colibra-app-warn);
 
 @include angular-material-theme($colibra-app-theme);
+
+* {
+  &:not(.mat-icon) {
+    font-family: 'Cairo', sans-serif;
+  }
+  &,
+  &::before,
+  &::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
+
+.strong {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 700;
+}
