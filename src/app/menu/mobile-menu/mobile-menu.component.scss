@@ -1,0 +1,35 @@
+@import "../../../styles.scss";
+
+.mobile-menu-container {
+  background-color: #ffffff;
+  padding-top: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+
+  .mobile-menu {
+    position: relative;
+    .menu {
+      padding-bottom: 10px;
+      width: 33.333%;
+      outline: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      & > * {
+        -webkit-transition: color .25s ease-in-out;
+        -moz-transition: color .25s ease-in-out;
+        -ms-transition: color .25s ease-in-out;
+        -o-transition: color .25s ease-in-out;
+        transition: color .25s ease-in-out;
+      }
+      &.active > * {
+        color: mat-color($colibra-green-palette, 500);
+      }
+    }
+  }
+}

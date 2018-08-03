@@ -11,6 +11,7 @@ import {DesktopMenuComponent} from './menu/desktop-menu/desktop-menu.component';
 import {TasksComponent} from './tasks/tasks.component';
 import {HistoryComponent} from './history/history.component';
 import {TrainingsComponent} from './trainings/trainings.component';
+import {MobileMenuComponent} from './menu/mobile-menu/mobile-menu.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {TrainingsComponent} from './trainings/trainings.component';
     DesktopMenuComponent,
     TasksComponent,
     HistoryComponent,
-    TrainingsComponent
+    TrainingsComponent,
+    MobileMenuComponent
   ],
   imports: [
     BrowserModule,
