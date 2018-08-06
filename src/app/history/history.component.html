@@ -1,0 +1,26 @@
+<div fxLayout="column" fxLayoutGap="3rem">
+  <div class="container" fxLayout="column" fxLayoutGap="0.25rem">
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center" fxLayoutGap="8px"
+         class="title">
+      <i class="icon far fa-file"></i>
+      <h2 class="bold marginless">Active tasks</h2>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="center center"
+         class="task-container">
+      <app-task-card *ngFor="let idx of [1,2,3,4,5,6,7,8]" [task]="activeTask"></app-task-card>
+      <app-task-card style="visibility: hidden; height: 0;"></app-task-card>
+    </div>
+  </div>
+  <div class="container" fxLayout="column" fxLayoutGap="0.25rem">
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center" fxLayoutGap="8px"
+         class="title">
+      <i class="icon far fa-file"></i>
+      <h2 class="bold marginless">Completed tasks</h2>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="center center"
+         class="task-container">
+      <app-task-card *ngFor="let idx of [1,2,3,4,5,6,7,8]" [task]="completedTask"></app-task-card>
+      <app-task-card style="visibility: hidden; height: 0;"></app-task-card>
+    </div>
+  </div>
+</div>
