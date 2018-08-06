@@ -1,0 +1,23 @@
+<mat-card class="training-card">
+  <mat-card-content>
+    <div fxLayout="column">
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2rem">
+        <img src="/assets/luggage.png" alt="">
+        <div fxLayout="column" fxLayoutAlign="center start">
+          <span class="bold">{{training?.title}}</span>
+          <span>{{training?.description}}</span>
+          <span>Language: {{training?.language}}</span>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>Status: {{training?.status}}</div>
+        <ng-container *ngIf="!training?.completed; else spacer">
+          <button mat-flat-button color="primary">Continue</button>
+        </ng-container>
+        <ng-template #spacer>
+          <div style="height: 36px;"></div>
+        </ng-template>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
