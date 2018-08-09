@@ -26,6 +26,8 @@ export class HistoryComponent implements OnInit {
       current: 7,
       total: 7
     },
+    reward: 100,
+    horDelta: '+2',
     country: 'GB',
     type: 'transport',
     completed: true

@@ -1,0 +1,36 @@
+<mat-card class="task-card">
+  <mat-card-content fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="0.5rem">
+    <div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="0.5rem">
+      <table>
+        <tr>
+          <td class="bold">Time:</td>
+          <td>6 hours ago</td>
+        </tr>
+        <tr>
+          <td class="bold">Event:</td>
+          <td>{{task?.event}}</td>
+        </tr>
+        <tr>
+          <td class="bold">Voters:</td>
+          <td>{{task?.voters?.current + '/' + task?.voters?.total}}</td>
+        </tr>
+        <tr>
+          <td class="bold">Reward:</td>
+          <td>{{task?.reward}}CBR</td>
+        </tr>
+        <tr>
+          <td class="bold">HOR:</td>
+          <td>{{task?.horDelta}}</td>
+        </tr>
+      </table>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="0.5rem">
+      <img src="/assets/luggage.png" alt="">
+      <ng-container>
+        <button mat-flat-button color="primary" class="task-button">
+          View
+        </button>
+      </ng-container>
+    </div>
+  </mat-card-content>
+</mat-card>

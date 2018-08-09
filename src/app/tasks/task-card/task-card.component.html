@@ -19,12 +19,14 @@
     </div>
     <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="1rem">
       <img src="/assets/flag-bg.png" alt="">
-      <ng-container *ngIf="!task?.completed; else space">
-        <button mat-flat-button color="primary" class="task-button">View</button>
-      </ng-container>
-      <ng-template #space>
-        <div class="spacer"></div>
-      </ng-template>
+      <button mat-flat-button color="primary" class="task-button">
+        <ng-container *ngIf="!task?.completed; else view">
+          Vote
+        </ng-container>
+        <ng-template #view>
+          View
+        </ng-template>
+      </button>
     </div>
   </mat-card-content>
 </mat-card>
