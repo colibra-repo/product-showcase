@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {TasksComponent} from '../tasks/tasks.component';
 import {HistoryComponent} from '../history/history.component';
 import {TrainingsComponent} from '../trainings/trainings.component';
+import {TaskDetailsComponent} from '../tasks/task-details/task-details.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,9 @@ const routes: Routes = [
   },
   {
     path: 'trainings', component: TrainingsComponent
+  },
+  {
+    path: 'tasks/:id', component: TaskDetailsComponent
   }
 ];
 

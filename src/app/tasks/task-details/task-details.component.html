@@ -1,0 +1,159 @@
+<div class="container" fxLayout="column" fxLayoutGap="1rem">
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center" fxLayoutGap="8px" class="title">
+    <i class="icon fas fa-user-md"></i>
+    <h2 class="bold marginless">Task #{{task.id}}</h2>
+  </div>
+  <mat-card class="col-card">
+    <mat-card-content fxLayout="column" fxLayoutGap="1rem">
+      <div fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign="start stretch" fxLayoutAlign.gt-md="start start"
+           fxLayoutGap="1rem">
+        <div fxFlex="0 0 auto" fxFlex.gt-md="0%" fxLayout="column" fxLayoutGap="1rem">
+          <div fxFlex>
+            <h2 class="bold marginless">Travel Profile</h2>
+          </div>
+          <div fxFlex="0%" fxLayoutAlign="space-between start">
+            <div fxFlex fxLayout="column">
+              <span class="bold">Gender</span>
+              <span class="muted">Female</span>
+            </div>
+            <div fxFlex fxLayout="column">
+              <span class="bold">Risk Score</span>
+              <span class="muted">Medium</span>
+            </div>
+            <div fxFlex fxLayout="column">
+              <span class="bold">Travel Profile</span>
+              <span class="muted">Adventure</span>
+            </div>
+          </div>
+        </div>
+        <div fxFlex="0 0 auto" fxFlex.gt-md="0%" fxLayout="column" fxLayoutGap="1rem">
+          <div fxFlex>
+            <h2 class="bold marginless">Task Information</h2>
+          </div>
+          <div fxFlex="0%" fxLayoutAlign="space-between start">
+            <div fxFlex fxLayout="column">
+              <span class="bold">Time</span>
+              <span class="muted">2 hours ago</span>
+            </div>
+            <div fxFlex fxLayout="column">
+              <span class="bold">Type</span>
+              <span class="muted">Broken arm</span>
+            </div>
+            <div fxFlex fxLayout="column">
+              <span class="bold">Location</span>
+              <span class="muted">Paje, Zanzibar, Tanzania</span>
+              <button mat-flat-button class="mt-1" (click)="openNearbyHospitals()">View Task Map</button>
+            </div>
+          </div>
+        </div>
+        <div fxFlex="0 0 auto" fxFlex.gt-md="0%" fxLayout="column" fxLayoutGap="1rem">
+          <div fxFlex>
+            <h2 class="bold marginless">Hospital Information</h2>
+          </div>
+          <div fxFlex="0%" fxLayoutAlign="space-between start">
+            <div fxFlex fxLayout="column">
+              <span class="bold">Hospital</span>
+              <span class="muted">Stone Town Hospital</span>
+            </div>
+            <div fxFlex fxLayout="column">
+              <span class="bold">Success Rate</span>
+              <span class="muted">75% Above Average</span>
+            </div>
+            <div fxFlex fxLayout="column">
+              <span class="bold">Google Rating</span>
+              <app-rating [rating]="5" [max]="5"></app-rating>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign="start stretch" fxLayoutAlign.gt-md="start start"
+           fxLayoutGap="1rem">
+        <div fxFlex="100%" fxFlex.gt-md="33.333%" fxLayout="column" fxLayoutGap="1rem">
+          <div fxFlex>
+            <h2 class="bold marginless">Bill Details</h2>
+          </div>
+          <div fxFlex="0%" fxLayout="column" fxLayoutGap="1rem">
+
+            <!--TODO: Extract component -->
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <div fxFlex="1 0 66.666%" fxLayout="column">
+                <span class="bold">Mouth: 10 USD</span>
+                <span class="muted">Average: 12 USD</span>
+              </div>
+              <div fxFlex="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch" class="color-olive">
+                Within range
+              </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <div fxFlex="1 0 66.666%" fxLayout="column">
+                <span class="bold">Monthly Cases: 32 USD</span>
+                <span class="muted">Average: 25 USD</span>
+              </div>
+              <div fxFlex="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch" class="color-olive">
+                Above average
+              </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <div fxFlex="1 0 66.666%" fxLayout="column">
+                <span class="bold">X-Ray: 10 USD</span>
+                <span class="muted">Average: 8 USD</span>
+              </div>
+              <div fxFlex="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch" class="color-olive">
+                Within range
+              </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <div fxFlex="1 0 66.666%" fxLayout="column">
+                <span class="bold">Bill: 52 USD</span>
+                <span class="muted">Average: 67 USD</span>
+              </div>
+              <div fxFlex="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch" class="color-olive">
+                Within range
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row" fxFlexAlign="end">
+            <button mat-flat-button>View Document</button>
+          </div>
+        </div>
+        <div fxFlex="100%" fxFlex.gt-md="33.333%" fxLayout="column" fxLayoutGap="1rem">
+          <div fxFlex>
+            <h2 class="bold marginless">Support documents</h2>
+          </div>
+          <div fxFlex="0%" fxLayout="column" fxLayoutGap="1rem">
+            <!--TODO: Extract component -->
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <div fxFlex="0%" fxFlex.gt-md="66.666%">
+                <span class="bold">Doctor's perscription</span>
+              </div>
+              <div fxFlex="0%" fxFlex.gt-md="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch">
+                <button mat-flat-button>View Document</button>
+              </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <div fxFlex="0%" fxFlex.gt-md="66.666%">
+                <span class="bold">X-Ray</span>
+              </div>
+              <div fxFlex="0%" fxFlex.gt-md="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch">
+                <button mat-flat-button>View Document</button>
+              </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <div fxFlex="0%" fxFlex.gt-md="66.666%">
+                <span class="bold">User Video</span>
+              </div>
+              <div fxFlex="0%" fxFlex.gt-md="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch">
+                <img src="https://img.youtube.com/vi/-rzaSPs__-A/0.jpg" alt="" class="video-thumbnail" (click)="openVideo('-rzaSPs__-A')">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="end center" fxLayoutGap="1rem" class="actions">
+    <button mat-flat-button class="bg-orange">Vote False</button>
+    <button mat-flat-button class="bg-orange">Vote True</button>
+  </div>
+</div>
