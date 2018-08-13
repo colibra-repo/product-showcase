@@ -1,0 +1,54 @@
+@import '../../../../styles.scss';
+
+.mat-dialog-content.media-player-content {
+  max-height: none;
+
+  .video-content {
+    max-width: 100%;
+  }
+
+  vg-time-display {
+    width: auto;
+
+    &:last-of-type {
+      margin-right: 1rem;
+    }
+  }
+  .current-time {
+    &:after {
+      content: "/";
+      font-weight: 700;
+    }
+  }
+
+  .buffering-time {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .key-moments {
+    & > div > span {
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .square {
+      width: 16px;
+      height: 16px;
+      background-color: $col-green;
+    }
+  }
+
+  .media-player-controls > * {
+    align-items: center;
+  }
+
+  .cueOverlay {
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    bottom: 50px;
+    width: 100%;
+    left: 0px;
+  }
+}
