@@ -1,0 +1,24 @@
+@import '../../../../styles.scss';
+
+.sebm-google-map-container {
+  width: 40vw;
+  height: 50vh;
+}
+
+.hospital-info {
+  & > * {
+    line-height: 1.25;
+  }
+
+  &:not(:last-of-type):after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: $col-olive;
+  }
+}
+
+.floating {
+  margin: auto;
+}

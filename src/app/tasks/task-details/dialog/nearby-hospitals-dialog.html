@@ -1,0 +1,49 @@
+<div mat-dialog-title class="mb-1" fxLayoutAlign="space-between center">
+  <h2 class="bold">Task Map</h2>
+  <img src="/assets/ic_small_close.svg" alt="" class="icon icon-close" (click)="close()">
+</div>
+<div class="col-dialog-content mat-dialog-content">
+  <div fxLayoutAlign="space-between stretch" fxLayoutGap="2rem">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="10">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      <agm-marker [latitude]="-6.4167666" [longitude]="39.5533225"></agm-marker>
+      <agm-marker [latitude]="-6.1766356" [longitude]="39.2000556"></agm-marker>
+      <agm-marker [latitude]="-6.1625386" [longitude]="39.1886372"></agm-marker>
+    </agm-map>
+    <div fxLayout="column" fxLayoutAlign="start start">
+      <h2 class="bold">Hospitals nearby</h2>
+      <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="1.25rem">
+        <div fxLayout="column" class="hospital-info">
+          <span class="bold">3km - Makunduchi Hospital - Jambiani</span>
+          <div fxLayout="row" fxLayoutAlign="start center"><span class="muted bold">Google Score:</span>
+            <app-rating [rating]="3"></app-rating>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="4px"><span class="muted bold">Our Score:</span>
+            <app-score [score]="3"></app-score>
+          </div>
+        </div>
+        <div fxLayout="column" class="hospital-info">
+          <span class="bold">9km - Ali Amour Hospital - Stone Town</span>
+          <div fxLayout="row" fxLayoutAlign="start center"><span class="muted bold">Google Score:</span>
+            <app-rating [rating]="4"></app-rating>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="4px"><span class="muted bold">Our Score:</span>
+            <app-score [score]="6.5"></app-score>
+          </div>
+        </div>
+        <div fxLayout="column" class="hospital-info">
+          <span class="bold">9km - Stone Town Hospital - Stone Town</span>
+          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="4px"><span
+            class="muted bold">Google Score:</span>
+            <app-rating [rating]="5"></app-rating>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="4px"><span class="muted bold">Our Score:</span>
+            <app-score [score]="8"></app-score>
+          </div>
+        </div>
+      </div>
+      <h1 class="bold floating">Decision Risk: Low</h1>
+      <button mat-flat-button fxFlexAlign="end" (click)="close()">Done</button>
+    </div>
+  </div>
+</div>
