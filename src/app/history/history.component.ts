@@ -15,7 +15,7 @@ export class HistoryComponent implements OnInit {
       total: 7
     },
     country: 'GB',
-    type: 'transport',
+    type: 'luggage',
     completed: false
   };
 
@@ -29,7 +29,7 @@ export class HistoryComponent implements OnInit {
     reward: 100,
     horDelta: '+2',
     country: 'GB',
-    type: 'transport',
+    type: 'luggage',
     completed: true
   };
 

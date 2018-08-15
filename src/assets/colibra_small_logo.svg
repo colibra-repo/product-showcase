@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 51 51" style=""><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none" class="" style=""/>
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.31418701934999815" y1="0.6399558403620472" x2="1.1075157955957384" y2="-0.11242739289325414">
+      <stop offset="0" stop-color="#c0e1c5"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.4531600156624539" y1="0.5145362430152342" x2="-0.10362522955464593" y2="-0.12137824021259563">
+      <stop offset="0" stop-color="#a1ba8b"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.6995570674907187" y1="0.4628246278322574" x2="-0.021506094296685836" y2="0.5990892721437283">
+      <stop offset="0" stop-color="#b2d1b1"/>
+      <stop offset="0.2" stop-color="#bbd6ba"/>
+      <stop offset="0.53" stop-color="#d2e4d1"/>
+      <stop offset="0.93" stop-color="#f8fbf8"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0.46835797549953306" y1="0.46676967596095603" x2="0.330022513802746" y2="1.0695517130372267">
+      <stop offset="0" stop-color="#58bd7b"/>
+      <stop offset="1" stop-color="#3f905e"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="0.633832223855013" y1="0.493499464165195" x2="0.17269532184464187" y2="-0.036294697157244475">
+      <stop offset="0" stop-color="#58bd7b"/>
+      <stop offset="0.12" stop-color="#52b274"/>
+      <stop offset="0.4" stop-color="#479f68"/>
+      <stop offset="0.69" stop-color="#419460"/>
+      <stop offset="1" stop-color="#3f905e"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-6" x1="21.809999465942383" y1="24.889999389648438" x2="10.890000343322754" y2="18.649999618530273" xlink:href="#linear-gradient-5"/>
+    <linearGradient id="linear-gradient-7" x1="27.190000534057617" y1="20.280000686645508" x2="19.860000610351562" y2="39.150001525878906" xlink:href="#linear-gradient-5"/>
+  </defs>
+  <title>colibra_logo</title>
+<g class="currentLayer" style=""><title>Layer 1</title><path d="M24,24.5C21.49,16,20.43,9.83,27.53,2.16c.42-.45.74-.71.86-.5C31.69,7.15,28.06,21.36,24,24.5Z" fill-rule="evenodd" fill="url(#linear-gradient)" id="svg_1"/><path d="M24.53,29.07c-7.06-8.21-11.4-14.62-7.37-26.81.25-.73.47-1.18.71-1C19.64,2.46,30.17,23.57,24.53,29.07Z" fill-rule="evenodd" fill="url(#linear-gradient-2)" id="svg_2"/><path d="M29.72,30.14C17.22,29,8.44,27.19,2,13.8c-.39-.8-.56-1.35-.23-1.41.93-.16,5.38,1.72,9.7,3.24C21.87,19.33,26.34,23.94,29.72,30.14Z" fill-rule="evenodd" fill="url(#linear-gradient-3)" id="svg_3"/><path d="M36.55,13a.67.67,0,0,1,.67.67.68.68,0,0,1-.68.67.66.66,0,0,1-.66-.68.66.66,0,0,1,.67-.66Zm10.39,8.44c.5,0-4.35-3-6.79-5.76-1.61-1.8-1.72-3.84-2.46-4.5-3.32-2.92-9.21-1.68-11.29,4-1.1.23-2.84-.25-4.71-1.12A65.22,65.22,0,0,1,7.5,4.3c-1.55-1.48-1.79,6.84,5,15.26,5.33,6.59,10.6,6.57,10.06,7.18-1,1.1-3.11,13.84-1,23,1.26.51,4.71-8,4.7-8.9,0-3.91-.22-5.61,1.61-6.65,9.07-5.12,6.4-10.48,6-13.63-.42-3.68,3.85-3.77,6.43-2.72A41.43,41.43,0,0,1,46.94,21.47Z" fill="#57bc7a" fill-rule="evenodd" id="svg_4" class=""/><path d="M24.33,44.91a13.81,13.81,0,0,1-1.22-5.72A14,14,0,0,1,34.17,25.5c-.18,2.6-1.56,5.55-6.66,8.43-1.84,1-1.65,2.74-1.61,6.65A21.56,21.56,0,0,1,24.33,44.91Z" fill-rule="evenodd" fill="url(#linear-gradient-4)" id="svg_5"/><path d="M24.53,29.07c-.68-.79-1.33-1.56-2-2.33.1-.11,0-.2-.27-.32-4-5-6.76-9.64-6.69-15.81a48.34,48.34,0,0,0,6.07,3.53,14.6,14.6,0,0,0,2.83,1C26.31,20.8,27.11,26.56,24.53,29.07Z" fill-rule="evenodd" fill="url(#linear-gradient-5)" id="svg_6"/><path d="M29.72,30.14c-2.82-.26-5.46-.55-7.92-1a7.57,7.57,0,0,1,.78-2.4c.54-.61-4.73-.59-10.06-7.18A31.3,31.3,0,0,1,9.4,14.9c.67.25,1.35.5,2,.73C21.87,19.33,26.34,23.94,29.72,30.14Z" fill-rule="evenodd" fill="url(#linear-gradient-6)" id="svg_7" class=""/><path d="M21.13,38.83c.38-10.35,7.09-12,8.29-21.21A25.54,25.54,0,0,1,25.34,24a16,16,0,0,0-2.5,3C22.22,28.28,21.3,33.2,21.13,38.83Z" fill-rule="evenodd" fill="url(#linear-gradient-7)" id="svg_8"/></g></svg>

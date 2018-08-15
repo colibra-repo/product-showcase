@@ -2,8 +2,9 @@
   <mat-card-content>
     <div fxLayout="column">
       <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2rem">
-        <img src="/assets/luggage.png" alt="">
-        <div fxLayout="column" fxLayoutAlign="center start">
+        <div fxLayoutAlign="center center" class="task-type">
+          <mat-icon [svgIcon]="'task_' + training?.type" class="task-icon"></mat-icon>
+        </div>        <div fxLayout="column" fxLayoutAlign="center start">
           <span class="bold">{{training?.title}}</span>
           <span>{{training?.description}}</span>
           <span>Language: {{training?.language}}</span>

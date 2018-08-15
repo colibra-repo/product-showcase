@@ -13,21 +13,24 @@ export class TrainingsComponent implements OnInit {
       description: 'Unlock Regular Tasks',
       language: 'English',
       status: 'Completed',
-      completed: true
+      completed: true,
+      type: 'luggage'
     },
     {
       title: 'Medical exam',
       description: 'Unlock Medical Tasks',
       language: 'English',
       status: '1/3',
-      completed: false
+      completed: false,
+      type: 'health'
     },
     {
       title: 'Increase HOR',
       description: 'Unlock Medical Tasks',
       language: 'German',
       status: '1/3',
-      completed: false
+      completed: false,
+      type: 'colibra'
     }
   ];
 

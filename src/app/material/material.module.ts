@@ -7,14 +7,16 @@ import {MatButtonModule, MatCardModule, MatDialogModule, MatIconModule, MatToolb
     MatCardModule,
     MatDialogModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   exports: [
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule {

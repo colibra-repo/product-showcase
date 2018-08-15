@@ -5,10 +5,12 @@
 }
 
 .settings .profile {
-  .mat-icon.avatar {
-    font-size: 3rem;
-    width: 3rem;
-    height: 3rem;
+  .avatar {
+    width: 42px;
+    height: 42px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
   }
 
   .username, .level {

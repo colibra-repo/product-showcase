@@ -15,7 +15,7 @@ export class TasksComponent implements OnInit {
       total: 7
     },
     country: 'GB',
-    type: 'transport'
+    type: 'luggage'
   };
 
   constructor() {

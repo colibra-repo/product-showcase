@@ -60,6 +60,72 @@ $colibra-grey-palette: (
   )
 );
 
+$colibra-olive-palette: (
+  50 : #f3f8e9,
+  100 : #e0efc7,
+  200 : #cbe4a2,
+  300 : #b6d97c,
+  400 : #a7d060,
+  500 : #97c844,
+  600 : #8fc23e,
+  700 : #84bb35,
+  800 : #7ab42d,
+  900 : #69a71f,
+  A100 : #f0ffe0,
+  A200 : #d7ffad,
+  A400 : #bfff7a,
+  A700 : #b2ff61,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$colibra-orange-palette: (
+  50 : #fef0e5,
+  100 : #fcd9be,
+  200 : #fabf92,
+  300 : #f8a566,
+  400 : #f79246,
+  500 : #f57f25,
+  600 : #f47721,
+  700 : #f26c1b,
+  800 : #f06216,
+  900 : #ee4f0d,
+  A100 : #ffffff,
+  A200 : #ffece5,
+  A400 : #ffc6b3,
+  A700 : #ffb399,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
 $colibra-app-primary: mat-palette($colibra-green-palette, 500);
 $colibra-app-accent: mat-palette($colibra-grey-palette, 500);
 $colibra-app-warn: mat-palette($mat-red);
@@ -68,9 +134,13 @@ $colibra-app-theme: mat-light-theme($colibra-app-primary, $colibra-app-accent, $
 
 @include angular-material-theme($colibra-app-theme);
 
+$col-green: mat-color($colibra-green-palette, 500);
+$col-olive: mat-color($colibra-olive-palette, 500);
+$col-orange: mat-color($colibra-orange-palette, 500);
+
 * {
   &:not(.mat-icon):not(.icon) {
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
   }
   &,
   &::before,
@@ -81,13 +151,18 @@ $colibra-app-theme: mat-light-theme($colibra-app-primary, $colibra-app-accent, $
   }
 }
 
+html, body {
+  overflow: hidden;
+}
+
 .mat-typography {
+  font-weight: 700;
   h1,
   h2,
   h3,
   h4,
   h5 {
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
   }
 }
 
@@ -97,6 +172,10 @@ $colibra-app-theme: mat-light-theme($colibra-app-primary, $colibra-app-accent, $
 
 .bold {
   font-weight: 700 !important;
+}
+
+.muted {
+  opacity: 0.7;
 }
 
 .icon {
@@ -120,12 +199,95 @@ $colibra-app-theme: mat-light-theme($colibra-app-primary, $colibra-app-accent, $
   }
 
   .task-button {
-    width: 112px;
+    width: 97px;
+    height: 30px;
+    border-radius: 4px;
+    background-image: linear-gradient(27deg, #2cb05b, #34be79);
+    line-height: 1.6;
   }
 }
 
-.mat-card.task-card:not([class*=mat-elevation-z]) {
+.mat-card.col-card:not([class*=mat-elevation-z]) {
+  width: 300px;
+  height: 150px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  padding: 21px;
   -webkit-box-shadow: 0px 0px 10px 5px rgba(142, 142, 142, 0.08);
   -moz-box-shadow: 0px 0px 10px 5px rgba(142, 142, 142, 0.08);
   box-shadow: 0px 0px 10px 5px rgba(142, 142, 142, 0.08);
+}
+
+.color-olive {
+  color: $col-olive;
+}
+
+.color-green {
+  color: $col-green;
+}
+
+.color-orange {
+  color: $col-orange;
+}
+
+.cdk-overlay-dark-backdrop {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.interactable {
+  cursor: pointer;
+  outline: none;
+}
+
+//Media player
+.media-player-content vg-scrub-bar-cue-points .cue-point-container .cue-point {
+  background-color: $col-green;
+}
+
+vg-scrub-bar > * {
+  outline: none !important;
+}
+
+//Dialogs
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+::ng-deep .mat-dialog-container {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.col-dialog-content.mat-dialog-content {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(142, 142, 142, 0.15);
+  -moz-box-shadow: 0px 0px 15px 5px rgba(142, 142, 142, 0.15);
+  box-shadow: 0px 0px 15px 5px rgba(142, 142, 142, 0.15);
+}
+
+//Icons
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mat-icon.col-icon {
+  width: 42px;
+  height: 42px;
+}
+
+//Tasks
+.task-type {
+  width: 97px;
+  height: 68px;
+  border-radius: 4px;
+  background-color: #e5f5ea;
+
+  .task-icon {
+    width: 39px;
+    height: 39px;
+  }
 }
