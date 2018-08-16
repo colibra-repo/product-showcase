@@ -4,6 +4,7 @@ import {TasksComponent} from '../tasks/tasks.component';
 import {HistoryComponent} from '../history/history.component';
 import {TrainingsComponent} from '../trainings/trainings.component';
 import {TaskDetailsComponent} from '../tasks/task-details/task-details.component';
+import {ProfileComponent} from '../profile/profile.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,9 @@ const routes: Routes = [
   },
   {
     path: 'tasks/:id', component: TaskDetailsComponent
+  },
+  {
+    path: 'profile', component: ProfileComponent
   }
 ];
 

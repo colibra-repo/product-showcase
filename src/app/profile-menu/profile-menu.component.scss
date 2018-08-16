@@ -1,9 +1,3 @@
-@media only screen and (min-width: 960px) {
-  .settings {
-    padding-bottom: 20px;
-  }
-}
-
 .settings .profile {
   .avatar {
     width: 42px;
@@ -11,6 +5,15 @@
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
+    transition: box-shadow 0.25s ease-in-out;
+    outline: none;
+
+    &.active {
+      -webkit-box-shadow: 0 0 0 2px #55bd79;
+      -moz-box-shadow: 0 0 0 2px #55bd79;
+      box-shadow:  0 0 0 2px #55bd79;
+      box-shadow:  0 0 0 2px #55bd79;
+    }
   }
 
   .username, .level {
@@ -20,5 +23,11 @@
 
   .level {
     opacity: 0.5;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .settings {
+    padding-bottom: 20px;
   }
 }

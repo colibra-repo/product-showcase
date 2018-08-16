@@ -24,6 +24,7 @@ import {RatingComponent} from './rating/rating.component';
 import {ScoreComponent} from './score/score.component';
 import {BlurrableDirective} from './blurrable.directive';
 import {HttpClientModule} from '@angular/common/http';
+import {ProfileComponent} from './profile/profile.component';
 
 
 Number.prototype.toTimestampString = function () {
@@ -63,7 +64,8 @@ Number.prototype.toTimestampString = function () {
     NearbyHospitalsDialogComponent,
     RatingComponent,
     ScoreComponent,
-    BlurrableDirective
+    BlurrableDirective,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

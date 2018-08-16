@@ -1,11 +1,21 @@
 <div fxLayoutAlign="start center" fxLayoutGap="1rem" class="settings">
-  <mat-icon svgIcon="notifications_active" fxHide fxShow.gt-sm></mat-icon>
-  <div fxHide fxShow.gt-sm fxLayoutAlign="center center" fxLayoutGap="10px" class="profile">
-    <img src="/assets/jane_doe.jpg" alt="" class="avatar">
+  <mat-icon svgIcon="notifications_active"></mat-icon>
+  <div fxHide fxShow.gt-sm  fxLayoutAlign="center center" fxLayoutGap="10px" class="profile">
+    <img src="/assets/john_doe.png" alt="" class="avatar interactable" routerLink="/profile" routerLinkActive="active">
     <div fxLayout="column" class="menu">
-      <span class="username bold">Jane Doe</span>
+      <span class="username bold">John Doe</span>
       <span class="level bold">Level 5 - Expert</span>
     </div>
+    <div fxHide fxShow.gt-sm>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon fxHide fxShow.gt-sm svgIcon="more"></mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+          <i class="icon fas fa-sign-out-alt"></i>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </div>
   </div>
-  <mat-icon svgIcon="more"></mat-icon>
 </div>

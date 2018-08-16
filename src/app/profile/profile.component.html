@@ -1,0 +1,84 @@
+<div class="container">
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row" fxLayoutGap="1.5rem">
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1rem">
+      <img src="/assets/john_doe.png" alt="John Doe" class="profile-pic">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <h1 class="bold marginless">John Doe</h1>
+        <h1 class="bold muted marginless">Level 5 - Expert</h1>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+          <span class="bold muted">HOR 87 | To next level: 11 HOR | Verified </span>
+          <mat-icon svgIcon="verified" class="small-icon"></mat-icon>
+        </div>
+      </div>
+      <mat-card class="col-card status-card">
+        <mat-card-content fxLayout="column">
+          <h2 class="bold">Current status</h2>
+          <span class="bold">Awaiting decision on Task 1762</span>
+          <span class="bold muted">Voters: 6/7</span>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div fxLayout="column" fxLayoutGap="0.5rem" class="profile-info">
+      <div fxHide fxShow.gt-xs fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+        <mat-icon svgIcon="account" class="icon"></mat-icon>
+        <h1 class="bold marginless">Account</h1>
+      </div>
+      <mat-card fxFlex="0%" class="col-card account">
+        <mat-card-content fxLayout="column" fxLayoutGap="3rem">
+          <div class="column">
+            <h2 class="bold">
+              Profile Information
+            </h2>
+            <div fxLayout="column" fxLayout.gt-xs="row" class="profile-info-details">
+              <div fxFlex="0%" fxLayout="column">
+                <span>Date of Birth</span>
+                <span class="muted">18 February 1976</span>
+              </div>
+              <div fxFlex="0%" fxLayout="column">
+                <span>City of Birth</span>
+                <span class="muted">Orlando</span>
+              </div>
+              <div fxFlex="0%" fxLayout="column">
+                <span>Verification</span>
+                <span class="muted">ID</span>
+              </div>
+              <div fxFlex="0%" fxLayout="column">
+                <span>Languages</span>
+                <span class="muted">English, French</span>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <h2 class="bold">
+              Statistics
+            </h2>
+            <div fxLayout="column" fxLayout.gt-xs="row" class="statistics-details">
+              <div fxFlex="0%" fxLayout="column">
+                <span>Lifetime ColibraTokens</span>
+                <span class="muted">11 342 CBR</span>
+              </div>
+              <div fxFlex="0%" fxLayout="column">
+                <span>Current ColibraTokens</span>
+                <span class="muted">4 167 CBR</span>
+              </div>
+              <div fxFlex="0%" fxLayout="column">
+                <span>Vested ColibraTokens</span>
+                <span class="muted">1 342 CBR</span>
+              </div>
+              <div fxFlex="0%" fxLayout="column">
+                <span>Withdrawable ColibraTokens</span>
+                <span class="muted">2 800 CBR</span>
+              </div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="27px" fxLayoutAlign="center center" fxLayoutAlign.gt-xs="start center"
+                 class="actions">
+              <button mat-flat-button>Deposit</button>
+              <button mat-flat-button>Withdraw</button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <div fxShow fxHide.gt-xs class="spacer"></div>
+    </div>
+  </div>
+</div>
