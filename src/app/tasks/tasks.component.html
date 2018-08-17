@@ -1,4 +1,4 @@
-<div class="container" fxLayout="column" fxLayoutGap="0.25rem">
+<div *ngIf="!!task" class="container" fxLayout="column" fxLayoutGap="0.25rem">
   <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center" fxLayoutGap="8px" class="title">
     <mat-icon svgIcon="tasks" class="col-icon"></mat-icon>
     <h2 class="bold marginless">Latest tasks</h2>

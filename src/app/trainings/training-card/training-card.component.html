@@ -1,4 +1,4 @@
-<mat-card class="training-card">
+<mat-card class="training-card" *ngIf="!!training">
   <mat-card-content>
     <div fxLayout="column">
       <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2rem">
@@ -13,7 +13,7 @@
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div>Status: {{training?.status}}</div>
         <ng-container *ngIf="!training?.completed; else spacer">
-          <button mat-flat-button color="primary">Continue</button>
+          <button mat-flat-button class="task-button">Continue</button>
         </ng-container>
         <ng-template #spacer>
           <div style="height: 36px;"></div>

@@ -1,4 +1,4 @@
-<mat-card class="col-card task-card">
+<mat-card *ngIf="!!task" class="col-card task-card">
   <mat-card-content fxLayout="column" fxLayoutGap="0.5rem">
     <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="1rem">
       <table>
