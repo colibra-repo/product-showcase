@@ -1,7 +1,6 @@
-import {AfterViewInit, ChangeDetectionStrategy, Component, Inject, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
-import {SafeResourceUrl} from '@angular/platform-browser/src/security/dom_sanitization_service';
 import {VgAPI} from 'videogular2/core';
 import {fromEvent} from 'rxjs';
 
@@ -24,10 +23,9 @@ export class TaskDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
-  openVideo(vid) {
+  openVideo() {
     const dialogRef = this.dialog.open(UserVideoDialogComponent, {
       data: {
-        vid: vid,
         cues: [
           {second: 5, text: 'First key moment'},
           {second: 10, text: 'Second key moment'},
