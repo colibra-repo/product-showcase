@@ -1,11 +1,5 @@
 @import '../../../styles.scss';
 
-@media only screen and (min-width: 960px) {
-  .tab {
-    padding-bottom: 20px;
-  }
-}
-
 .tabs {
   position: relative;
   .ink-slider {
@@ -16,7 +10,12 @@
     bottom: 0;
     border-bottom: 2px solid mat-color($colibra-green-palette, 500);
     transition: left .25s;
+    display: none;
   }
+  & .tab.active ~ .ink-slider {
+    display: inline-flex;
+  }
+
   & .tab:first-child.active ~ .ink-slider {
     left: 0;
   }
@@ -41,4 +40,10 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+@media only screen and (min-width: 960px) {
+  .tab {
+    padding-bottom: 20px;
+  }
 }
