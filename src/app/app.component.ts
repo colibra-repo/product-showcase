@@ -1,11 +1,15 @@
 import {Component} from '@angular/core';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
+import {fadeAnimation} from './routeAnimation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    fadeAnimation
+  ]
 })
 export class AppComponent {
 
@@ -29,5 +33,4 @@ export class AppComponent {
     this.matIconRegistry.addSvgIcon('tasks', this.sanitizer.bypassSecurityTrustResourceUrl('/assets/ic_tasks.svg'));
     this.matIconRegistry.addSvgIcon('trainings', this.sanitizer.bypassSecurityTrustResourceUrl('/assets/ic_trainings.svg'));
   }
-
 }
