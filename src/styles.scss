@@ -170,6 +170,10 @@ html, body {
 .container {
   max-width: 1300px;
   margin: 0 auto;
+  &:after {
+    content: "";
+    margin-bottom: 20px;
+  }
 }
 
 router-outlet ~ * {
