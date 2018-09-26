@@ -11,12 +11,12 @@ remote_backup_dir="app_backup"
 
 
 case $environment in
-    prod)
+    production)
         amazon_host="18.185.118.232"
         private_key_path="/ssl/colibra_demo.pem"
         ;;
     *)
-        echo "The first parameter must be the environment. Only 'prod' is supported for the moment"
+        echo "The first parameter must be the environment. Only 'production' is supported for the moment"
         exit
 esac
 
