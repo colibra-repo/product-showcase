@@ -1,7 +1,7 @@
 <div class="container" fxLayout="column" fxLayoutGap="1rem">
   <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center" fxLayoutGap="8px" class="title">
-    <i class="icon fas fa-user-md"></i>
-    <h2 class="bold marginless">Task #{{task.id}}</h2>
+    <i #taskTypeIcon class="icon fas"></i>
+    <h2 class="bold marginless">Task #{{task.task_id}}</h2>
   </div>
   <mat-card class="col-card details">
     <mat-card-content fxLayout="column" fxLayoutGap="1rem">
@@ -14,15 +14,15 @@
           <div fxFlex="0%" fxLayoutAlign="space-between start">
             <div fxFlex fxLayout="column">
               <span class="bold">Gender</span>
-              <span class="muted">Female</span>
+              <span class="muted">{{task.travel_profile.gender}}</span>
             </div>
             <div fxFlex fxLayout="column">
               <span class="bold">Risk Score</span>
-              <span class="muted">Medium</span>
+              <span class="muted">{{task.travel_profile.risk_score}}</span>
             </div>
             <div fxFlex fxLayout="column">
               <span class="bold">Travel Profile</span>
-              <span class="muted">Adventure</span>
+              <span class="muted">{{task.travel_profile.type}}</span>
             </div>
           </div>
         </div>
@@ -33,15 +33,15 @@
           <div fxFlex="0%" fxLayoutAlign="space-between start">
             <div fxFlex fxLayout="column">
               <span class="bold">Time</span>
-              <span class="muted">2 hours ago</span>
+              <span class="muted">{{task.incident_time}}</span>
             </div>
             <div fxFlex fxLayout="column">
               <span class="bold">Type</span>
-              <span class="muted">Broken arm</span>
+              <span class="muted">{{task.incident_desc}}</span>
             </div>
             <div fxFlex fxLayout="column">
               <span class="bold">Location</span>
-              <span class="muted">Paje, Zanzibar, Tanzania</span>
+              <span class="muted">{{task.location.address}}</span>
               <button mat-flat-button class="mt-1" (click)="openNearbyHospitals()">View Task Map</button>
             </div>
           </div>
@@ -53,15 +53,15 @@
           <div fxFlex="0%" fxLayoutAlign="space-between start">
             <div fxFlex fxLayout="column">
               <span class="bold">Hospital</span>
-              <span class="muted">Stone Town Hospital</span>
+              <span class="muted">{{task.hospital.name}}</span>
             </div>
             <div fxFlex fxLayout="column">
               <span class="bold">Success Rate</span>
-              <span class="muted">75% Above Average</span>
+              <span class="muted">{{task.hospital.success_rate}}</span>
             </div>
             <div fxFlex fxLayout="column">
               <span class="bold">Google Rating</span>
-              <app-rating [rating]="5" [max]="5"></app-rating>
+              <app-rating [rating]=task.hospital.rating [max]="5"></app-rating>
             </div>
           </div>
         </div>
@@ -76,40 +76,13 @@
           <div fxFlex="0%" fxLayout="column" fxLayoutGap="1rem">
 
             <!--TODO: Extract component -->
-            <div fxLayout="row" fxLayoutAlign="start center">
+            <div *ngFor="let bill_detail of task.bill_details" fxLayout="row" fxLayoutAlign="start center">
               <div fxFlex="1 0 66.666%" fxLayout="column">
-                <span class="bold">Mouth: 10 USD</span>
-                <span class="muted">Average: 12 USD</span>
+                <span class="bold">{{bill_detail.name}}: {{bill_detail.price}}</span>
+                <span class="muted">Average: {{bill_detail.average}}</span>
               </div>
-              <div fxFlex="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch" class="color-olive">
-                Within range
-              </div>
-            </div>
-            <div fxLayout="row" fxLayoutAlign="start center">
-              <div fxFlex="1 0 66.666%" fxLayout="column">
-                <span class="bold">Monthly Cases: 32 USD</span>
-                <span class="muted">Average: 25 USD</span>
-              </div>
-              <div fxFlex="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch" class="color-olive">
-                Above average
-              </div>
-            </div>
-            <div fxLayout="row" fxLayoutAlign="start center">
-              <div fxFlex="1 0 66.666%" fxLayout="column">
-                <span class="bold">X-Ray: 10 USD</span>
-                <span class="muted">Average: 8 USD</span>
-              </div>
-              <div fxFlex="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch" class="color-olive">
-                Within range
-              </div>
-            </div>
-            <div fxLayout="row" fxLayoutAlign="start center">
-              <div fxFlex="1 0 66.666%" fxLayout="column">
-                <span class="bold">Bill: 52 USD</span>
-                <span class="muted">Average: 67 USD</span>
-              </div>
-              <div fxFlex="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch" class="color-olive">
-                Within range
+              <div fxFlex="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch" [ngClass]="bill_detail.comparison_positive ? 'color-olive' : 'color-orange'">
+                {{bill_detail.comparison}}
               </div>
             </div>
           </div>
@@ -123,17 +96,9 @@
           </div>
           <div fxFlex="0%" fxLayout="column" fxLayoutGap="1rem">
             <!--TODO: Extract component -->
-            <div fxLayout="row" fxLayoutAlign="start center">
+            <div *ngFor="let additional_document of task.additional_documents" fxLayout="row" fxLayoutAlign="start center">
               <div fxFlex="0%" fxFlex.gt-md="66.666%">
-                <span class="bold">Doctor's perscription</span>
-              </div>
-              <div fxFlex="0%" fxFlex.gt-md="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch">
-                <button mat-flat-button>View Document</button>
-              </div>
-            </div>
-            <div fxLayout="row" fxLayoutAlign="start center">
-              <div fxFlex="0%" fxFlex.gt-md="66.666%">
-                <span class="bold">X-Ray</span>
+                <span class="bold">{{additional_document.name}}</span>
               </div>
               <div fxFlex="0%" fxFlex.gt-md="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch">
                 <button mat-flat-button>View Document</button>
@@ -144,7 +109,7 @@
                 <span class="bold">User Video</span>
               </div>
               <div fxFlex="0%" fxFlex.gt-md="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch">
-                <img src="/assets/thumbnail.png" alt="" class="video-thumbnail" (click)="openVideo()">
+                <img src="{{task.video_data.thumbnail_url}}" alt="" class="video-thumbnail" (click)="openVideo()">
               </div>
             </div>
           </div>

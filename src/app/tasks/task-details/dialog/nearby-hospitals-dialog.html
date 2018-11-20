@@ -6,43 +6,22 @@
   <div fxLayoutAlign="space-between stretch" fxLayoutGap="2rem">
     <agm-map [latitude]="lat" [longitude]="lng" [zoom]="10">
       <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-      <agm-marker [latitude]="-6.4167666" [longitude]="39.5533225"></agm-marker>
-      <agm-marker [latitude]="-6.1766356" [longitude]="39.2000556"></agm-marker>
-      <agm-marker [latitude]="-6.1625386" [longitude]="39.1886372"></agm-marker>
+      <agm-marker *ngFor="let hospital of hospitals" [latitude]="hospital.lat" [longitude]="hospital.lng"></agm-marker>
     </agm-map>
     <div fxLayout="column" fxLayoutAlign="start start">
       <h2 class="bold">Hospitals nearby</h2>
       <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="1.25rem">
-        <div fxLayout="column" class="hospital-info">
-          <span class="bold">3km - Makunduchi Hospital - Jambiani</span>
+        <div *ngFor="let hospital of hospitals" fxLayout="column" class="hospital-info">
+          <span class="bold">{{hospital.distance}} - {{hospital.name}}</span>
           <div fxLayout="row" fxLayoutAlign="start center"><span class="muted bold">Google Score:</span>
-            <app-rating [rating]="3"></app-rating>
+            <app-rating [rating]=hospital.google_score></app-rating>
           </div>
           <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="4px"><span class="muted bold">Our Score:</span>
-            <app-score [score]="3"></app-score>
-          </div>
-        </div>
-        <div fxLayout="column" class="hospital-info">
-          <span class="bold">9km - Ali Amour Hospital - Stone Town</span>
-          <div fxLayout="row" fxLayoutAlign="start center"><span class="muted bold">Google Score:</span>
-            <app-rating [rating]="4"></app-rating>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="4px"><span class="muted bold">Our Score:</span>
-            <app-score [score]="6.5"></app-score>
-          </div>
-        </div>
-        <div fxLayout="column" class="hospital-info">
-          <span class="bold">9km - Stone Town Hospital - Stone Town</span>
-          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="4px"><span
-            class="muted bold">Google Score:</span>
-            <app-rating [rating]="5"></app-rating>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="4px"><span class="muted bold">Our Score:</span>
-            <app-score [score]="8"></app-score>
+            <app-score [score]=hospital.colibra_score></app-score>
           </div>
         </div>
       </div>
-      <h1 class="bold floating">Decision Risk: Low</h1>
+      <h1 class="bold floating">Decision Risk: {{decision_risk}}</h1>
       <button mat-flat-button fxFlexAlign="end" (click)="close()">Done</button>
     </div>
   </div>
