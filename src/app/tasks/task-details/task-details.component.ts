@@ -1,8 +1,9 @@
-import {ChangeDetectionStrategy, Component, Inject, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Inject, OnInit, ViewChild, ElementRef, Renderer2} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import {VgAPI} from 'videogular2/core';
 import {fromEvent} from 'rxjs';
+import * as case_data from '../../fixtures/first_case.json'
 
 declare var VTTCue;
 
@@ -12,36 +13,41 @@ declare var VTTCue;
   styleUrls: ['./task-details.component.scss']
 })
 export class TaskDetailsComponent implements OnInit {
+  @ViewChild('taskTypeIcon') taskTypeIcon: ElementRef;
 
-  task = {
-    id: '1983'
-  };
 
-  constructor(public dialog: MatDialog) {
+  task = case_data
+  iconClass: string;
+
+  constructor(public dialog: MatDialog, private _renderer: Renderer2) {
+    switch(case_data["insurance_type"]) { 
+      case "Medical": { 
+        this.iconClass = "fa-user-md"; 
+        break; 
+      } 
+      default: { 
+        this.iconClass = "fa-user-secret";
+        break; 
+      } 
+    } 
   }
 
   ngOnInit() {
+      this._renderer.addClass(this.taskTypeIcon.nativeElement, this.iconClass);
   }
 
   openVideo() {
     const dialogRef = this.dialog.open(UserVideoDialogComponent, {
-      data: {
-        cues: [
-          {second: 5, text: 'First key moment'},
-          {second: 10, text: 'Second key moment'},
-          {second: 20, text: 'Third key moment'},
-          {second: 50, text: 'Fourth key moment'},
-          {second: 60, text: 'Fifth key moment'},
-        ]
-      }
+      data: case_data["video_data"]
     });
   }
 
   openNearbyHospitals() {
     const dialogRef = this.dialog.open(NearbyHospitalsDialogComponent, {
       data: {
-        lat: -6.2658911,
-        lng: 39.5285832
+          location: case_data["location"],
+          hospitals: case_data["nearby_hospitals"],
+          decision_risk: case_data["decision_risk"]
       }
     });
   }
@@ -59,11 +65,13 @@ export class UserVideoDialogComponent implements OnInit {
   api: VgAPI;
   track: TextTrack;
   points = [];
+  url: string;
   private textCues = [];
   activeCue: any;
 
   constructor(public dialogRef: MatDialogRef<UserVideoDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) {
+    this.url = data.video_url;
     this.data.cues.forEach((c, i) => {
       this.points.push({second: c.second, time: c.second.toTimestampString(), text: c.text});
       const vttCue = new VTTCue(c.second, c.second + 1, c.text);
@@ -106,11 +114,15 @@ export class NearbyHospitalsDialogComponent implements OnInit {
 
   lat: number;
   lng: number;
+  hospitals: any;
+  decision_risk: string;
 
   constructor(public dialogRef: MatDialogRef<NearbyHospitalsDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any, private sanitizer: DomSanitizer) {
-    this.lat = data.lat;
-    this.lng = data.lng;
+    this.lat = data.location.lat;
+    this.lng = data.location.lng;
+    this.hospitals = data.hospitals;
+    this.decision_risk = data.decision_risk;
   }
 
   ngOnInit(): void {
