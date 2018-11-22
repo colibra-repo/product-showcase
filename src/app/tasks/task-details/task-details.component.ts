@@ -105,6 +105,13 @@ export class UserVideoDialogComponent implements OnInit {
   }
 }
 
+const MARKER_OBJECT = {
+  url: './assets/ic_pin_accident.svg',
+  scaledSize: {
+      width: 47,
+      height: 62
+  }
+};
 @Component({
   selector: 'app-nearby-hospitals',
   templateUrl: './dialog/nearby-hospitals-dialog.html',
@@ -112,17 +119,22 @@ export class UserVideoDialogComponent implements OnInit {
 })
 export class NearbyHospitalsDialogComponent implements OnInit {
 
-  lat: number;
-  lng: number;
+  position: any;
   hospitals: any;
   decision_risk: string;
 
   constructor(public dialogRef: MatDialogRef<NearbyHospitalsDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any, private sanitizer: DomSanitizer) {
-    this.lat = data.location.lat;
-    this.lng = data.location.lng;
+    this.position = {
+      lat: data.location.lat,
+      lng: data.location.lng,
+      marker: MARKER_OBJECT
+    };
     this.hospitals = data.hospitals;
     this.decision_risk = data.decision_risk;
+    this.hospitals.forEach((hospital, i) => {
+      hospital.marker = this.getHospitalMarker(hospital);
+    });
   }
 
   ngOnInit(): void {
@@ -130,5 +142,11 @@ export class NearbyHospitalsDialogComponent implements OnInit {
 
   close(): void {
     this.dialogRef.close();
+  }
+
+  getHospitalMarker(hospital): any {
+    var hospitalMarker = Object.assign({}, MARKER_OBJECT);
+    hospitalMarker.url = hospital.selected ? './assets/ic_pin_hospital_selected.svg' : './assets/ic_pin_hospital.svg'
+    return  hospitalMarker;
   }
 }

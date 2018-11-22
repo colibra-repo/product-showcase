@@ -88,7 +88,8 @@
           "lat": -6.1625386,
           "distance": "9km",
           "google_score": 5,
-          "colibra_score": 8
+          "colibra_score": 8,
+          "selected": true
        }
     ],
     "placed_votes": [

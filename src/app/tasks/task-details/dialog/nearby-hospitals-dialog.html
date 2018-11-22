@@ -4,14 +4,16 @@
 </div>
 <div class="col-dialog-content mat-dialog-content">
   <div fxLayoutAlign="space-between stretch" fxLayoutGap="2rem">
-    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="10">
-      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-      <agm-marker *ngFor="let hospital of hospitals" [latitude]="hospital.lat" [longitude]="hospital.lng"></agm-marker>
+    <agm-map [latitude]="position.lat" [longitude]="position.lng" [zoom]="10">
+      <agm-marker [iconUrl]="position.marker" [latitude]="position.lat" [longitude]="position.lng"></agm-marker>
+      <agm-marker *ngFor="let hospital of hospitals" [iconUrl]="hospital.marker" [latitude]="hospital.lat" [longitude]="hospital.lng"></agm-marker>
     </agm-map>
     <div fxLayout="column" fxLayoutAlign="start start">
       <h2 class="bold">Hospitals nearby</h2>
       <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="1.25rem">
         <div *ngFor="let hospital of hospitals" fxLayout="column" class="hospital-info">
+          <div *ngIf="hospital.selected" fxLayout="row" fxLayoutAlign="start center"><span class="bold green">Customer's choice</span>
+          </div>
           <span class="bold">{{hospital.distance}} - {{hospital.name}}</span>
           <div fxLayout="row" fxLayoutAlign="start center"><span class="muted bold">Google Score:</span>
             <app-rating [rating]=hospital.google_score></app-rating>
@@ -21,7 +23,7 @@
           </div>
         </div>
       </div>
-      <h1 class="bold floating">Decision Risk: {{decision_risk}}</h1>
+      <h3 class="bold floating">Decision Risk: {{decision_risk}}</h3>
       <button mat-flat-button fxFlexAlign="end" (click)="close()">Done</button>
     </div>
   </div>
