@@ -120,7 +120,6 @@ const MARKER_OBJECT = {
 export class NearbyHospitalsDialogComponent implements OnInit {
 
   position: any;
-  lng: number;
   hospitals: any;
   decision_risk: string;
 
@@ -134,7 +133,7 @@ export class NearbyHospitalsDialogComponent implements OnInit {
     this.hospitals = data.hospitals;
     this.decision_risk = data.decision_risk;
     this.hospitals.forEach((hospital, i) => {
-      hospital.marker = NearbyHospitalsDialogComponent.getHospitalMarker(hospital);
+      hospital.marker = this.getHospitalMarker(hospital);
     });
   }
 
@@ -145,7 +144,7 @@ export class NearbyHospitalsDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  static getHospitalMarker(hospital): any {
+  getHospitalMarker(hospital): any {
     var hospitalMarker = Object.assign({}, MARKER_OBJECT);
     hospitalMarker.url = hospital.selected ? './assets/ic_pin_hospital_selected.svg' : './assets/ic_pin_hospital.svg'
     return  hospitalMarker;
