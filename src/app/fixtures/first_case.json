@@ -4,6 +4,14 @@
     "incident_desc": "Broken arm",
     "incident_time": "2 hours ago",
     "decision_risk": "Low",
+    "task_stake": {
+      "hor": {
+         "positive": 2,
+         "negative": -2
+      },
+      "tokens": 10,
+      "stake": 32
+    },
     "travel_profile": {
        "gender": "Female",
        "risk_score": "Medium",

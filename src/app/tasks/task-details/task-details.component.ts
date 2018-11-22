@@ -29,7 +29,11 @@ export class TaskDetailsComponent implements OnInit {
         this.iconClass = "fa-user-secret";
         break; 
       } 
-    } 
+    }
+    this.task["vote"] = false;
+    if (this.task.hasOwnProperty("vote") && !this.task.hasOwnProperty("result")) {
+      this._calculateTaskResults();
+    }
   }
 
   ngOnInit() {
@@ -52,6 +56,35 @@ export class TaskDetailsComponent implements OnInit {
     });
   }
 
+  _calculateTaskResults() : void {
+      const trueVotes = [].concat(this.task.placed_votes)
+         .concat(this.task.remaining_votes)
+         .concat([this.task.vote])
+         .filter(vote => vote  == true)
+         .length;
+      const truePercentage = Math.round((trueVotes * 100.0) / 7.0);
+      const falsePercentage = 100.0 - truePercentage;
+      const correct = (trueVotes > 3) == this.task.vote;
+      if (correct) {
+        this.task["result"] = {
+          truePercentage: truePercentage,
+          falsePercentage: falsePercentage,
+          correct: correct,
+          hor: this.task.task_stake.hor.positive,
+          tokens: this.task.task_stake.tokens,
+          total: this.task.task_stake.stake + this.task.task_stake.tokens
+        };
+      } else {
+        this.task["result"] = {
+          truePercentage: truePercentage,
+          falsePercentage: falsePercentage,
+          correct: correct,
+          hor: this.task.task_stake.hor.negative,
+          tokens: 0,
+          total: -this.task.task_stake.stake
+        };
+      }
+  }
 }
 
 @Component({
