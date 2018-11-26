@@ -1,0 +1,133 @@
+@import '~@angular/material/theming';
+@include mat-core();
+$colibra-green-palette: (
+  50 : #e6f5ee,
+  100 : #c1e6d4,
+  200 : #98d6b7,
+  300 : #6ec59a,
+  400 : #4fb884,
+  500 : #30ac6e,
+  600 : #2ba566,
+  700 : #249b5b,
+  800 : #1e9251,
+  900 : #13823f,
+  A100 : #b7ffd0,
+  A200 : #84ffb0,
+  A400 : #51ff8f,
+  A700 : #37ff7e,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$colibra-grey-palette: (
+  50 : #ebebeb,
+  100 : #cccccc,
+  200 : #aaaaaa,
+  300 : #888888,
+  400 : #6f6f6f,
+  500 : #555555,
+  600 : #4e4e4e,
+  700 : #444444,
+  800 : #3b3b3b,
+  900 : #2a2a2a,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+  )
+);
+
+$colibra-olive-palette: (
+  50 : #f3f8e9,
+  100 : #e0efc7,
+  200 : #cbe4a2,
+  300 : #b6d97c,
+  400 : #a7d060,
+  500 : #97c844,
+  600 : #8fc23e,
+  700 : #84bb35,
+  800 : #7ab42d,
+  900 : #69a71f,
+  A100 : #f0ffe0,
+  A200 : #d7ffad,
+  A400 : #bfff7a,
+  A700 : #b2ff61,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$colibra-orange-palette: (
+  50 : #fef0e5,
+  100 : #fcd9be,
+  200 : #fabf92,
+  300 : #f8a566,
+  400 : #f79246,
+  500 : #f57f25,
+  600 : #f47721,
+  700 : #f26c1b,
+  800 : #f06216,
+  900 : #ee4f0d,
+  A100 : #ffffff,
+  A200 : #ffece5,
+  A400 : #ffc6b3,
+  A700 : #ffb399,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$colibra-app-primary: mat-palette($colibra-green-palette, 500);
+$colibra-app-accent: mat-palette($colibra-grey-palette, 500);
+$colibra-app-warn: mat-palette($mat-red);
+
+$colibra-app-theme: mat-light-theme($colibra-app-primary, $colibra-app-accent, $colibra-app-warn);
+
+@include angular-material-theme($colibra-app-theme);

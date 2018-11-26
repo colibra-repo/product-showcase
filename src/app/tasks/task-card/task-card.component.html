@@ -1,4 +1,4 @@
-<mat-card *ngIf="!!task" class="col-card task-card">
+<mat-card *ngIf="task" class="col-card task-card">
   <mat-card-content fxLayout="column" fxLayoutGap="0.5rem">
     <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="1rem">
       <table>
@@ -8,20 +8,20 @@
         </tr>
         <tr>
           <td class="bold">Event:</td>
-          <td>{{task?.event}}</td>
+          <td>{{task?.incident_desc}}</td>
         </tr>
         <tr>
           <td class="bold">Voters:</td>
-          <td>{{task?.voters?.current + '/' + task?.voters?.total}}</td>
+          <td>{{task?.placed_votes.length + '/' + 7}}</td>
         </tr>
       </table>
       <div fxLayoutAlign="center center" class="task-type">
-        <mat-icon [svgIcon]="'task_' + task?.type" class="task-icon"></mat-icon>
+        <mat-icon [svgIcon]="'task_' + task?.insurance_type?.toLowerCase()" class="task-icon"></mat-icon>
       </div>
     </div>
     <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="1rem">
-      <img src="/assets/flag-bg.png" alt="">
-      <button mat-flat-button color="primary" class="task-button" routerLink="/tasks/123">
+      <img src="/assets/images/flag-bg.png" alt="">
+      <button mat-flat-button color="primary" class="task-button" [routerLink]="['/tasks/', task?.task_id]">
         <ng-container *ngIf="!task?.completed; else view">
           Vote
         </ng-container>

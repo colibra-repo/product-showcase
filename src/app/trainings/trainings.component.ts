@@ -22,7 +22,7 @@ export class TrainingsComponent implements OnInit {
       language: 'English',
       status: '1/3',
       completed: false,
-      type: 'health'
+      type: 'medical'
     },
     {
       title: 'Increase HOR',

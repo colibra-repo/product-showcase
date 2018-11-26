@@ -30,6 +30,11 @@
               "./node_modules/videogular2/fonts/videogular.css",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styling"
+              ]
+            },
             "scripts": []
           },
           "configurations": {

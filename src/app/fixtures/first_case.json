@@ -64,7 +64,7 @@
     ],
     "video_data": {
        "video_url": "http://static.videogular.com/assets/videos/videogular.mp4",
-       "thumbnail_url": "/assets/thumbnail.png",
+       "thumbnail_url": "/assets/images/thumbnail.png",
        "cues": [
            {"second": 5, "text": "First key moment"},
            {"second": 10, "text": "Second key moment"},

@@ -1,3 +1,8 @@
+.tasks-container {
+  max-height: calc(100% - 200px);
+  overflow-y: auto;
+}
+
 @media only screen and (min-width: 1280px) {
   .title {
     margin-left: 0.75rem;

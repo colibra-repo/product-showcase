@@ -1,11 +1,16 @@
-<div *ngIf="!!task" class="container" fxLayout="column" fxLayoutGap="0.25rem">
+<div class="container" fxLayout="column" fxLayoutGap="0.25rem">
   <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center" fxLayoutGap="8px" class="title">
     <mat-icon svgIcon="tasks" class="col-icon"></mat-icon>
     <h2 class="bold marginless">Latest tasks</h2>
   </div>
-  <div fxLayout="row wrap" fxLayoutAlign="center center"
+  <div fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign="start center" fxLayoutAlign.gt-md="start center"
        class="task-container">
-    <app-task-card *ngFor="let idx of [1,2,3,4,5,6,7,8]" [task]="task"></app-task-card>
-    <app-task-card style="visibility: hidden; height: 0;"></app-task-card>
+    <ng-container *ngIf="tasks$ && (tasks$ | async).length; else noTasks">
+      <app-task-card *ngFor="let task of tasks$ | async" [task]="task"></app-task-card>
+      <app-task-card style="visibility: hidden; height: 0;"></app-task-card>
+    </ng-container>
+    <ng-template #noTasks>
+      <h4 class="bold marginless">No tasks.</h4>
+    </ng-template>
   </div>
 </div>

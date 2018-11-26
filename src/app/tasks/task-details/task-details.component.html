@@ -1,8 +1,78 @@
 <div class="container" fxLayout="column" fxLayoutGap="1rem">
   <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center" fxLayoutGap="8px" class="title">
     <i #taskTypeIcon class="icon fas"></i>
-    <h2 class="bold marginless">Task #{{task.task_id}}</h2>
+    <h2 class="bold marginless">Task #{{task['task_id']}}</h2>
   </div>
+  <ng-container *ngIf="task?.result">
+    <mat-card class="col-card results">
+      <mat-card-content fxLayout="column">
+        <div fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign="start stretch" fxLayoutAlign.gt-md="start start"
+             fxLayoutGap="1rem">
+          <div fxFlex="0 0 auto" fxFlex.gt-md="33.333%" fxLayout="column" fxLayoutGap="1rem">
+            <div fxFlex>
+              <h2 class="bold marginless">Your vote:
+                <span [ngClass]="task?.result?.correct ? 'color-green' : 'color-red'">
+                {{task?.result?.correct ? 'Correct' : 'Incorrect'}}
+              </span>
+              </h2>
+            </div>
+            <div fxFlex="0%" fxLayoutAlign="space-between center">
+              <div fxFlex fxLayout="column">
+                <span class="bold">HOR</span>
+                <span class="muted">{{task?.result?.hor | signedNumber}}</span>
+              </div>
+              <div fxFlex fxLayout="column">
+                <span class="bold">Tokens</span>
+                <span class="muted">{{task?.result?.tokens | signedNumber}}</span>
+              </div>
+            </div>
+            <div fxFlex="0%" fxLayoutAlign="space-between center">
+              <div fxFlex fxLayout="column">
+                <span class="bold">Stake outcome</span>
+                <span class="muted">{{(task?.result?.correct ? '+' : '-') + task?.task_stake?.stake}}</span>
+              </div>
+              <div fxFlex fxLayout="column">
+                <span class="bold">Total</span>
+                <span class="muted">{{task?.result?.total | signedNumber}}</span>
+              </div>
+            </div>
+          </div>
+          <div fxFlex="0 0 auto" fxFlex.gt-md="31.333%" fxLayout="column" fxLayoutGap="1rem">
+            <div fxFlex>
+              <h2 class="bold marginless">Task outcome:
+                <span class="outcome" [ngClass]="task?.result?.truePercentage > 50 ? 'true' : 'false'">
+                  {{task?.result?.truePercentage > 50 ? 'True' : 'False'}}
+                </span>
+              </h2>
+            </div>
+            <ng-container *ngIf="task?.result?.correct">
+              <div fxFlex>
+                <h2 class="bold marginless">Task status:
+                  <span class="color-green">Paid</span></h2>
+              </div>
+            </ng-container>
+          </div>
+          <div fxFlex="0 0 auto" fxFlex.gt-md="31.333%" fxLayout="column" fxLayoutGap="1rem">
+            <div fxFlex>
+              <h2 class="bold marginless">Voters</h2>
+            </div>
+            <div fxFlex="0%" fxLayoutAlign="space-between center">
+              <div fxFlex fxLayout="column">
+                <span class="bold">Voted True: {{task?.result?.truePercentage}}%</span>
+                <app-bar-chart [percentage]="task?.result?.truePercentage" color="#d5d54b"></app-bar-chart>
+              </div>
+            </div>
+            <div fxFlex="0%" fxLayoutAlign="space-between center">
+              <div fxFlex fxLayout="column">
+                <span class="bold">Voted False: {{task?.result?.falsePercentage}}%</span>
+                <app-bar-chart [percentage]="task?.result?.falsePercentage" color="#c5bdff"></app-bar-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
   <mat-card class="col-card details">
     <mat-card-content fxLayout="column" fxLayoutGap="1rem">
       <div fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign="start stretch" fxLayoutAlign.gt-md="start start"
@@ -14,15 +84,15 @@
           <div fxFlex="0%" fxLayoutAlign="space-between start">
             <div fxFlex fxLayout="column">
               <span class="bold">Gender</span>
-              <span class="muted">{{task.travel_profile.gender}}</span>
+              <span class="muted">{{task['travel_profile'].gender}}</span>
             </div>
             <div fxFlex fxLayout="column">
               <span class="bold">Risk Score</span>
-              <span class="muted">{{task.travel_profile.risk_score}}</span>
+              <span class="muted">{{task['travel_profile'].risk_score}}</span>
             </div>
             <div fxFlex fxLayout="column">
               <span class="bold">Travel Profile</span>
-              <span class="muted">{{task.travel_profile.type}}</span>
+              <span class="muted">{{task['travel_profile'].type}}</span>
             </div>
           </div>
         </div>
@@ -33,15 +103,15 @@
           <div fxFlex="0%" fxLayoutAlign="space-between start">
             <div fxFlex fxLayout="column">
               <span class="bold">Time</span>
-              <span class="muted">{{task.incident_time}}</span>
+              <span class="muted">{{task['incident_time']}}</span>
             </div>
             <div fxFlex fxLayout="column">
               <span class="bold">Type</span>
-              <span class="muted">{{task.incident_desc}}</span>
+              <span class="muted">{{task['incident_desc']}}</span>
             </div>
             <div fxFlex fxLayout="column">
               <span class="bold">Location</span>
-              <span class="muted">{{task.location.address}}</span>
+              <span class="muted">{{task['location'].address}}</span>
               <button mat-flat-button class="mt-1" (click)="openNearbyHospitals()">View Task Map</button>
             </div>
           </div>
@@ -53,15 +123,15 @@
           <div fxFlex="0%" fxLayoutAlign="space-between start">
             <div fxFlex fxLayout="column">
               <span class="bold">Hospital</span>
-              <span class="muted">{{task.hospital.name}}</span>
+              <span class="muted">{{task['hospital'].name}}</span>
             </div>
             <div fxFlex fxLayout="column">
               <span class="bold">Success Rate</span>
-              <span class="muted">{{task.hospital.success_rate}}</span>
+              <span class="muted">{{task['hospital'].success_rate}}</span>
             </div>
             <div fxFlex fxLayout="column">
               <span class="bold">Google Rating</span>
-              <app-rating [rating]=task.hospital.rating [max]="5"></app-rating>
+              <app-rating [rating]="task['hospital'].rating" [max]="5"></app-rating>
             </div>
           </div>
         </div>
@@ -76,12 +146,13 @@
           <div fxFlex="0%" fxLayout="column" fxLayoutGap="1rem">
 
             <!--TODO: Extract component -->
-            <div *ngFor="let bill_detail of task.bill_details" fxLayout="row" fxLayoutAlign="start center">
+            <div *ngFor="let bill_detail of task['bill_details']" fxLayout="row" fxLayoutAlign="start center">
               <div fxFlex="1 0 66.666%" fxLayout="column">
                 <span class="bold">{{bill_detail.name}}: {{bill_detail.price}}</span>
                 <span class="muted">Average: {{bill_detail.average}}</span>
               </div>
-              <div fxFlex="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch" [ngClass]="bill_detail.comparison_positive ? 'color-olive' : 'color-orange'">
+              <div fxFlex="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch"
+                   [ngClass]="bill_detail.comparison_positive ? 'color-olive' : 'color-orange'">
                 {{bill_detail.comparison}}
               </div>
             </div>
@@ -96,7 +167,8 @@
           </div>
           <div fxFlex="0%" fxLayout="column" fxLayoutGap="1rem">
             <!--TODO: Extract component -->
-            <div *ngFor="let additional_document of task.additional_documents" fxLayout="row" fxLayoutAlign="start center">
+            <div *ngFor="let additional_document of task['additional_documents']" fxLayout="row"
+                 fxLayoutAlign="start center">
               <div fxFlex="0%" fxFlex.gt-md="66.666%">
                 <span class="bold">{{additional_document.name}}</span>
               </div>
@@ -109,7 +181,7 @@
                 <span class="bold">User Video</span>
               </div>
               <div fxFlex="0%" fxFlex.gt-md="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch">
-                <img src="{{task.video_data.thumbnail_url}}" alt="" class="video-thumbnail" (click)="openVideo()">
+                <img src="{{task['video_data'].thumbnail_url}}" alt="" class="video-thumbnail" (click)="openVideo()">
               </div>
             </div>
           </div>
@@ -117,8 +189,11 @@
       </div>
     </mat-card-content>
   </mat-card>
-  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="end center" fxLayoutGap="1rem" class="actions">
-    <button mat-flat-button class="bg-orange">Vote False</button>
-    <button mat-flat-button class="bg-orange">Vote True</button>
-  </div>
+  <ng-container *ngIf="!task?.result">
+    <div fxFlex="noshrink" fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="end center"
+         fxLayoutGap="1rem" class="actions">
+      <button mat-flat-button class="bg-orange" (click)="vote(false);">Vote False</button>
+      <button mat-flat-button class="bg-orange" (click)="vote(true)">Vote True</button>
+    </div>
+  </ng-container>
 </div>

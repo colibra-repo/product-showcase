@@ -1,4 +1,4 @@
-<mat-card *ngIf="!!task" class="col-card task-card" >
+<mat-card *ngIf="task" class="col-card task-card">
   <mat-card-content fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="0.5rem">
     <div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="0.5rem">
       <table>
@@ -8,27 +8,27 @@
         </tr>
         <tr>
           <td class="bold">Event:</td>
-          <td>{{task?.event}}</td>
+          <td>{{task?.incident_desc}}</td>
         </tr>
         <tr>
           <td class="bold">Voters:</td>
-          <td>{{task?.voters?.current + '/' + task?.voters?.total}}</td>
+          <td>{{task?.placed_votes?.length + '/' + 7}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="task?.result?.correct">
           <td class="bold">Reward:</td>
-          <td>{{task?.reward}}CBR</td>
+          <td>{{task?.result?.total}}CBR</td>
         </tr>
         <tr>
           <td class="bold">HOR:</td>
-          <td>{{task?.horDelta}}</td>
+          <td>{{(task?.result?.hor > 0 ? '+' : '') + task?.result?.hor}}</td>
         </tr>
       </table>
     </div>
     <div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="0.5rem">
-      <div fxLayoutAlign="center center" class="task-type">
-        <mat-icon [svgIcon]="'task_' + task?.type" class="task-icon"></mat-icon>
+      <div fxLayoutAlign="center center" class="task-type completed">
+        <mat-icon [svgIcon]="'task_' + task?.insurance_type?.toLowerCase()" class="task-icon"></mat-icon>
       </div>
-      <button mat-flat-button color="primary" class="task-button" routerLink="/tasks/123">
+      <button mat-flat-button color="primary" class="task-button" [routerLink]="['/tasks/', task?.task_id]">
         View
       </button>
     </div>

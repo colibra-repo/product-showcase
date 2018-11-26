@@ -1,9 +1,10 @@
-import {ChangeDetectionStrategy, Component, Inject, OnInit, ViewChild, ElementRef, Renderer2} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Inject, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import {VgAPI} from 'videogular2/core';
 import {fromEvent} from 'rxjs';
-import * as case_data from '../../fixtures/first_case.json'
+import {DbService} from '../../services/db.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 declare var VTTCue;
 
@@ -16,74 +17,49 @@ export class TaskDetailsComponent implements OnInit {
   @ViewChild('taskTypeIcon') taskTypeIcon: ElementRef;
 
 
-  task = case_data
+  task: any;
   iconClass: string;
 
-  constructor(public dialog: MatDialog, private _renderer: Renderer2) {
-    switch(case_data["insurance_type"]) { 
-      case "Medical": { 
-        this.iconClass = "fa-user-md"; 
-        break; 
-      } 
-      default: { 
-        this.iconClass = "fa-user-secret";
-        break; 
-      } 
+  constructor(private _route: ActivatedRoute, private _router: Router, private _renderer: Renderer2, private db: DbService,
+              public dialog: MatDialog) {
+    const taskId = this._route.snapshot.params['id'];
+    this.task = db.tasksMap[taskId];
+    switch (this.task['insurance_type']) {
+      case 'Medical': {
+        this.iconClass = 'fa-user-md';
+        break;
+      }
+      default: {
+        this.iconClass = 'fa-user-secret';
+        break;
+      }
     }
-    this.task["vote"] = false;
-    if (this.task.hasOwnProperty("vote") && !this.task.hasOwnProperty("result")) {
-      this._calculateTaskResults();
-    }
+    this.task['vote'] = false;
   }
 
   ngOnInit() {
-      this._renderer.addClass(this.taskTypeIcon.nativeElement, this.iconClass);
+    this._renderer.addClass(this.taskTypeIcon.nativeElement, this.iconClass);
   }
 
   openVideo() {
     const dialogRef = this.dialog.open(UserVideoDialogComponent, {
-      data: case_data["video_data"]
+      data: this.task['video_data']
     });
   }
 
   openNearbyHospitals() {
     const dialogRef = this.dialog.open(NearbyHospitalsDialogComponent, {
       data: {
-          location: case_data["location"],
-          hospitals: case_data["nearby_hospitals"],
-          decision_risk: case_data["decision_risk"]
+        location: this.task['location'],
+        hospitals: this.task['nearby_hospitals'],
+        decision_risk: this.task['decision_risk']
       }
     });
   }
 
-  _calculateTaskResults() : void {
-      const trueVotes = [].concat(this.task.placed_votes)
-         .concat(this.task.remaining_votes)
-         .concat([this.task.vote])
-         .filter(vote => vote  == true)
-         .length;
-      const truePercentage = Math.round((trueVotes * 100.0) / 7.0);
-      const falsePercentage = 100.0 - truePercentage;
-      const correct = (trueVotes > 3) == this.task.vote;
-      if (correct) {
-        this.task["result"] = {
-          truePercentage: truePercentage,
-          falsePercentage: falsePercentage,
-          correct: correct,
-          hor: this.task.task_stake.hor.positive,
-          tokens: this.task.task_stake.tokens,
-          total: this.task.task_stake.stake + this.task.task_stake.tokens
-        };
-      } else {
-        this.task["result"] = {
-          truePercentage: truePercentage,
-          falsePercentage: falsePercentage,
-          correct: correct,
-          hor: this.task.task_stake.hor.negative,
-          tokens: 0,
-          total: -this.task.task_stake.stake
-        };
-      }
+  vote(value: boolean) {
+    this.db.vote(this.task.task_id, value);
+    this._router.navigate(['/history']);
   }
 }
 
@@ -139,12 +115,13 @@ export class UserVideoDialogComponent implements OnInit {
 }
 
 const MARKER_OBJECT = {
-  url: './assets/ic_pin_accident.svg',
+  url: './assets/images/ic_pin_accident.svg',
   scaledSize: {
-      width: 47,
-      height: 62
+    width: 47,
+    height: 62
   }
 };
+
 @Component({
   selector: 'app-nearby-hospitals',
   templateUrl: './dialog/nearby-hospitals-dialog.html',
@@ -178,8 +155,8 @@ export class NearbyHospitalsDialogComponent implements OnInit {
   }
 
   getHospitalMarker(hospital): any {
-    var hospitalMarker = Object.assign({}, MARKER_OBJECT);
-    hospitalMarker.url = hospital.selected ? './assets/ic_pin_hospital_selected.svg' : './assets/ic_pin_hospital.svg'
-    return  hospitalMarker;
+    const hospitalMarker = Object.assign({}, MARKER_OBJECT);
+    hospitalMarker.url = hospital.selected ? './assets/images/ic_pin_hospital_selected.svg' : './assets/images/ic_pin_hospital.svg';
+    return hospitalMarker;
   }
 }

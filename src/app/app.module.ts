@@ -22,9 +22,13 @@ import {AgmCoreModule} from '@agm/core';
 import {environment} from '../environments/environment';
 import {RatingComponent} from './rating/rating.component';
 import {ScoreComponent} from './score/score.component';
-import {BlurrableDirective} from './blurrable.directive';
-import {HttpClientModule} from '@angular/common/http';
+import {BlurrableDirective} from './directives/blurrable.directive';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {ProfileComponent} from './profile/profile.component';
+import { BarChartComponent } from './task-details/bar-chart/bar-chart.component';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { SignedNumberPipe } from './pipes/signed-number.pipe';
 
 
 Number.prototype.toTimestampString = function () {
@@ -44,6 +48,10 @@ Number.prototype.toTimestampString = function () {
 
   return result;
 };
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -65,7 +73,9 @@ Number.prototype.toTimestampString = function () {
     RatingComponent,
     ScoreComponent,
     BlurrableDirective,
-    ProfileComponent
+    ProfileComponent,
+    BarChartComponent,
+    SignedNumberPipe,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +87,14 @@ Number.prototype.toTimestampString = function () {
     AgmCoreModule.forRoot({
       apiKey: environment.apiKey
     }),
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   entryComponents: [

@@ -1,7 +1,7 @@
 <div class="container">
-  <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="center stretch" fxLayoutGap="1.5rem">
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-md="row" fxLayoutAlign.gt-md="center stretch" fxLayoutGap="1.5rem">
     <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1rem">
-      <img src="/assets/john_doe.png" alt="John Doe" class="profile-pic">
+      <img src="/assets/images/john_doe.png" alt="John Doe" class="profile-pic">
       <div fxLayout="column" fxLayoutAlign="center center">
         <h1 class="bold marginless">John Doe</h1>
         <h1 class="bold muted marginless">Level 5 - Expert</h1>
@@ -19,7 +19,7 @@
       </mat-card>
     </div>
     <div fxLayout="column" fxLayoutGap="0.5rem" class="profile-info">
-      <div fxHide fxShow.gt-xs fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+      <div fxHide fxShow.gt-md fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
         <mat-icon svgIcon="account" class="icon"></mat-icon>
         <h1 class="bold marginless">Account</h1>
       </div>
@@ -29,7 +29,7 @@
             <h2 class="bold">
               Profile Information
             </h2>
-            <div fxLayout="column" fxLayout.gt-xs="row" class="profile-info-details">
+            <div fxLayout="column" fxLayout.gt-md="row" class="profile-info-details">
               <div fxFlex="0%" fxLayout="column">
                 <span>Date of Birth</span>
                 <span class="muted">18 February 1976</span>
@@ -48,11 +48,11 @@
               </div>
             </div>
           </div>
-          <div class="column">
+          <div fxFlex="noshrink" fxLayout="column">
             <h2 class="bold">
               Statistics
             </h2>
-            <div fxLayout="column" fxLayout.gt-xs="row" class="statistics-details">
+            <div fxLayout="column" fxLayout.gt-md="row" class="statistics-details">
               <div fxFlex="0%" fxLayout="column">
                 <span>Lifetime ColibraTokens</span>
                 <span class="muted">11 342 CBR</span>
@@ -70,7 +70,7 @@
                 <span class="muted">2 800 CBR</span>
               </div>
             </div>
-            <div fxLayout="row" fxLayoutGap="27px" fxLayoutAlign="center center" fxLayoutAlign.gt-xs="start center"
+            <div fxFlex="noshrink" fxLayout="row" fxLayoutGap="27px" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center"
                  class="actions">
               <button mat-flat-button>Deposit</button>
               <button mat-flat-button>Withdraw</button>
@@ -78,7 +78,7 @@
           </div>
         </mat-card-content>
       </mat-card>
-      <div fxShow fxHide.gt-xs class="spacer"></div>
+      <div fxShow fxHide.gt-md class="spacer"></div>
     </div>
   </div>
 </div>

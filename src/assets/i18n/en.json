@@ -1,0 +1,10 @@
+{
+  "header": {
+    "label": "Task Manager"
+  },
+  "menu": {
+    "tasks": "Tasks",
+    "history": "History",
+    "trainings": "Trainings"
+  }
+}
