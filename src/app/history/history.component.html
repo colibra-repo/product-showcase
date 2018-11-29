@@ -3,7 +3,7 @@
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center" fxLayoutGap="8px"
          class="title">
       <mat-icon svgIcon="history" class="col-icon"></mat-icon>
-      <h2 class="bold marginless">Active tasks</h2>
+      <h2 class="bold marginless">{{'pages.history.activeTasksTitle' | translate}}</h2>
     </div>
     <div fxLayout="row wrap" fxLayoutAlign="start center"
          class="task-container">
@@ -12,7 +12,7 @@
         <app-task-card style="visibility: hidden; height: 0;"></app-task-card>
       </ng-container>
       <ng-template #noActiveTasks>
-        <h4 class="bold marginless">No active tasks.</h4>
+        <h4 class="bold marginless">{{'pages.history.noActiveTasks' | translate}}</h4>
       </ng-template>
     </div>
   </div>
@@ -20,7 +20,7 @@
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center" fxLayoutGap="8px"
          class="title">
       <mat-icon svgIcon="history" class="col-icon"></mat-icon>
-      <h2 class="bold marginless">Completed tasks</h2>
+      <h2 class="bold marginless">{{'pages.history.completedTasksTitle' | translate}}</h2>
     </div>
     <div fxLayout="row wrap" fxLayoutAlign="start center"
          class="task-container">
@@ -29,7 +29,7 @@
         <app-history-task-card style="visibility: hidden; height: 0;"></app-history-task-card>
       </ng-container>
       <ng-template #noCompletedTasks>
-        <h4 class="bold marginless">No completed tasks.</h4>
+        <h4 class="bold marginless">{{'pages.history.noCompletedTasks' | translate}}</h4>
       </ng-template>
     </div>
   </div>

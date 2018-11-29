@@ -3,8 +3,8 @@
   <div fxHide fxShow.gt-sm  fxLayoutAlign="center center" fxLayoutGap="10px" class="profile">
     <img src="/assets/images/john_doe.png" alt="" class="avatar interactable" routerLink="/profile" routerLinkActive="active">
     <div fxLayout="column" class="menu">
-      <span class="username bold">John Doe</span>
-      <span class="level bold">Level 5 - Expert</span>
+      <span class="username bold">{{'pages.profile.constants.name' | translate}}</span>
+      <span class="level bold">{{'pages.profile.labels.level' | translate}} {{'pages.profile.constants.level' | translate}}</span>
     </div>
     <div fxHide fxShow.gt-sm>
       <button mat-icon-button [matMenuTriggerFor]="menu">

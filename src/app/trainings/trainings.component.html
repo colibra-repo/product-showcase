@@ -2,11 +2,11 @@
   <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center" fxLayoutGap="8px"
        class="title">
     <mat-icon svgIcon="trainings" class="col-icon"></mat-icon>
-    <h2 class="bold marginless">Trainings</h2>
+    <h2 class="bold marginless">{{'pages.trainings.title' | translate}}</h2>
   </div>
   <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center" class="training-cards-container">
     <app-training-card *ngFor="let training of trainings" [training]="training"></app-training-card>
     <app-training-card style="visibility: hidden; height: 0;"></app-training-card>
   </div>
-  <button fxFlexAlign="center" mat-flat-button color="primary" class="add-button"><span class="bold">+ Add Language</span></button>
+  <button fxFlexAlign="center" mat-flat-button color="primary" class="add-button"><span class="bold">+ {{'pages.trainings.add_language' | translate}}</span></button>
 </div>

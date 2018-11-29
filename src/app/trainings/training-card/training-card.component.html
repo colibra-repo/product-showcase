@@ -7,13 +7,13 @@
         </div>        <div fxLayout="column" fxLayoutAlign="center start">
           <span class="bold">{{training?.title}}</span>
           <span>{{training?.description}}</span>
-          <span>Language: {{training?.language}}</span>
+          <span>{{'pages.trainings.language' | translate}}: {{training?.language}}</span>
         </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>Status: {{training?.status}}</div>
+        <div>{{'general.status' | translate}}: {{training?.status}}</div>
         <ng-container *ngIf="!training?.completed; else spacer">
-          <button mat-flat-button class="task-button">Continue</button>
+          <button mat-flat-button class="task-button">{{'general.continue' | translate}}</button>
         </ng-container>
         <ng-template #spacer>
           <div style="height: 36px;"></div>

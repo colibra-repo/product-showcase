@@ -3,23 +3,23 @@
     <div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="0.5rem">
       <table>
         <tr>
-          <td class="bold">Time:</td>
-          <td>6 hours ago</td>
+          <td class="bold">{{'pages.task.time' | translate}}:</td>
+          <td>6 {{'general.hours_ago' | translate}}</td>
         </tr>
         <tr>
-          <td class="bold">Event:</td>
+          <td class="bold">{{'pages.task.event' | translate}}</td>
           <td>{{task?.incident_desc}}</td>
         </tr>
         <tr>
-          <td class="bold">Voters:</td>
+          <td class="bold">{{'general.voters' | translate}}:</td>
           <td>{{task?.placed_votes?.length + '/' + 7}}</td>
         </tr>
         <tr *ngIf="task?.result?.correct">
-          <td class="bold">Reward:</td>
-          <td>{{task?.result?.total}}CBR</td>
+          <td class="bold">{{'pages.task.reward' | translate}}</td>
+          <td>{{task?.result?.total}}{{'general.cbr' | translate}}</td>
         </tr>
         <tr>
-          <td class="bold">HOR:</td>
+          <td class="bold">{{'general.hor' | translate}}:</td>
           <td>{{(task?.result?.hor > 0 ? '+' : '') + task?.result?.hor}}</td>
         </tr>
       </table>
@@ -29,7 +29,7 @@
         <mat-icon [svgIcon]="'task_' + task?.insurance_type?.toLowerCase()" class="task-icon"></mat-icon>
       </div>
       <button mat-flat-button color="primary" class="task-button" [routerLink]="['/tasks/', task?.task_id]">
-        View
+        {{'general.view' | translate}}
       </button>
     </div>
   </mat-card-content>
