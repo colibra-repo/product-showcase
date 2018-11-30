@@ -103,7 +103,7 @@
           <div fxFlex="0%" fxLayoutAlign="space-between start">
             <div fxFlex fxLayout="column">
               <span class="bold">{{'pages.task.time' | translate}}</span>
-              <span class="muted">{{task['incident_time']}}</span>
+              <span class="muted">{{'general.hours_ago' | translate: {hours: task['incident_time']} }}</span>
             </div>
             <div fxFlex fxLayout="column">
               <span class="bold">{{'pages.task.type' | translate}}</span>
@@ -189,7 +189,7 @@
       </div>
     </mat-card-content>
   </mat-card>
-  <ng-container *ngIf="!task?.result">
+  <ng-container *ngIf="!hasVoted">
     <div fxFlex="noshrink" fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="end center"
          fxLayoutGap="1rem" class="actions">
       <button mat-flat-button class="bg-orange" (click)="vote(false);">{{'pages.task.vote_false' | translate}}</button>

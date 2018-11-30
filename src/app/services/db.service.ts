@@ -11,7 +11,7 @@ export class DbService {
       'task_id': '1983',
       'insurance_type': 'Medical',
       'incident_desc': 'Broken arm',
-      'incident_time': '2 hours ago',
+      'incident_time': '2',
       'decision_risk': 'Low',
 
       'task_stake': {
@@ -142,6 +142,10 @@ export class DbService {
 
   getVotes(): any {
     return this._taskVotes;
+  }
+
+  hasUserVote(taskId: string) {
+    return this._taskVotes.hasOwnProperty(taskId);
   }
 
   autoVote(taskId) {

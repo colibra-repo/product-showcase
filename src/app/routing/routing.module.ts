@@ -24,7 +24,10 @@ const routes: Routes = [
   },
   {
     path: 'profile', component: ProfileComponent
-  }
+  },
+  {
+    path: 'history/:id', component: TaskDetailsComponent
+  },
 ];
 
 @NgModule({

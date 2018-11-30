@@ -4,7 +4,7 @@
       <table>
         <tr>
           <td class="bold">{{'pages.task.time' | translate}}:</td>
-          <td>6 {{'general.hours_ago' | translate}}</td>
+          <td>{{'general.hours_ago' | translate: {hours: 6} }}</td>
         </tr>
         <tr>
           <td class="bold">{{'pages.task.event' | translate}}</td>
@@ -28,7 +28,7 @@
       <div fxLayoutAlign="center center" class="task-type completed">
         <mat-icon [svgIcon]="'task_' + task?.insurance_type?.toLowerCase()" class="task-icon"></mat-icon>
       </div>
-      <button mat-flat-button color="primary" class="task-button" [routerLink]="['/tasks/', task?.task_id]">
+      <button mat-flat-button color="primary" class="task-button" [routerLink]="['/history/', task?.task_id]">
         {{'general.view' | translate}}
       </button>
     </div>

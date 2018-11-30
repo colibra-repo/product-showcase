@@ -67,6 +67,10 @@ router-outlet ~ * {
   margin: 0 !important;
 }
 
+.no-results {
+  padding-left: 15px;
+}
+
 //Cards
 .task-card {
   width: 300px;

@@ -19,6 +19,7 @@ export class TaskDetailsComponent implements OnInit {
 
   task: any;
   iconClass: string;
+  hasVoted = false;
 
   constructor(private _route: ActivatedRoute, private _router: Router, private _renderer: Renderer2, private db: DbService,
               public dialog: MatDialog) {
@@ -35,6 +36,7 @@ export class TaskDetailsComponent implements OnInit {
       }
     }
     this.task['vote'] = false;
+    this.hasVoted = db.hasUserVote(taskId);
   }
 
   ngOnInit() {
