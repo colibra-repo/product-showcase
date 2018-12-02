@@ -21,10 +21,28 @@
     "done": "Done",
     "status": "Status",
     "continue": "Continue",
-    "completed": "Completed",
-    "low": "Low",
-    "medium": "Medium",
-    "high": "High"
+    "completed": "Completed"
+  },
+  "enums": {
+    "levels": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    },
+    "gender": {
+      "male": "Male",
+      "female": "Female"
+    },
+    "comparison": {
+       "below_expectations": "Below average",
+       "as_expectations": "Within range",
+       "above_expectations": "Above average"
+    },
+    "profile": {
+       "adventure": "Adventure",
+       "business": "Business",
+       "tourist": "Tourist"
+    }
   },
   "menu": {
     "tasks": "Tasks",

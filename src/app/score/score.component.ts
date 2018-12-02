@@ -21,13 +21,13 @@ export class ScoreComponent implements OnInit {
     let colorCode = '';
     let levelLabel;
     if (this.score < 5) {
-      levelLabel = 'general.low';
+      levelLabel = 'enums.levels.low';
       colorCode = 'red';
     } else if (this.score < 7.5) {
-      levelLabel = 'general.medium';
+      levelLabel = 'enums.levels.medium';
       colorCode = 'yellow';
     } else {
-      levelLabel = 'general.high';
+      levelLabel = 'enums.levels.high';
       
       colorCode = 'green';
     }

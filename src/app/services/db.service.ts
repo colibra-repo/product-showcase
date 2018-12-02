@@ -12,7 +12,7 @@ export class DbService {
       'insurance_type': 'Medical',
       'incident_desc': 'Broken arm',
       'incident_time': '2',
-      'decision_risk': 'Low',
+      'decision_risk': 'enums.levels.low',
 
       'task_stake': {
         'hor': {
@@ -23,9 +23,9 @@ export class DbService {
         'stake': 32
       },
       'travel_profile': {
-        'gender': 'Female',
-        'risk_score': 'Medium',
-        'type': ' Adventure'
+        'gender': 'enums.gender.female',
+        'risk_score': 'enums.levels.medium',
+        'type': 'enums.profile.adventure'
       },
       'location': {
         'lat': -6.2658911,
@@ -34,7 +34,8 @@ export class DbService {
       },
       'hospital': {
         'name': 'Stone Town Hospital',
-        'success_rate': '75% Above Average',
+        'success_rate': '75%',
+        'success_comparison': 'enums.comparison.above_expectations',
         'rating': 5
       },
       'bill_details': [
@@ -42,28 +43,28 @@ export class DbService {
           'name': 'Mouth',
           'price': '10 USD',
           'average': '12 USD',
-          'comparison': 'Within range',
+          'comparison': 'enums.comparison.as_expectations',
           'comparison_positive': true
         },
         {
           'name': 'Monthly Cases',
           'price': '32 USD',
           'average': '25 USD',
-          'comparison': 'Above average',
+          'comparison': 'enums.comparison.above_expectations',
           'comparison_positive': false
         },
         {
           'name': 'X-Ray',
           'price': '10 USD',
           'average': '8 USD',
-          'comparison': 'Within range',
+          'comparison': 'enums.comparison.as_expectations',
           'comparison_positive': true
         },
         {
           'name': 'Bill',
           'price': '52 USD',
           'average': '67 USD',
-          'comparison': 'Within range',
+          'comparison': 'enums.comparison.as_expectations',
           'comparison_positive': true
         }
       ],
