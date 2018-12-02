@@ -1,4 +1,4 @@
-@import '../../../../styles.scss';
+@import 'variables';
 
 .sebm-google-map-container {
   width: 40vw;
@@ -26,3 +26,22 @@
 .green {
   color: #54bc79;
 }
+
+.customer-choice {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    width: 10px;
+    height: 10px;
+    background-color: #ffe081;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .sebm-google-map-container {
+    width: auto;
+  }
+}
+

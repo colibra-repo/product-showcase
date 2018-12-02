@@ -9,21 +9,11 @@
 .col-card.status-card {
   width: 300px;
   height: auto;
-  .mat-card-content {
-    margin-bottom: 0.5rem;
-  }
 }
 
 .icon {
   width: 31px;
   height: 31px;
-}
-
-.profile-info {
-  width: 100%;
-  .mat-card.col-card {
-    width: 100%;
-  }
 }
 
 .actions {
@@ -59,8 +49,8 @@
 
   .col-card.account {
     padding: 0.25rem 20px 30px 20px;
-    width: 340px;
   }
+
 
   .profile-info-details,
   .statistics-details {

@@ -20,7 +20,7 @@ export class RatingComponent implements OnInit {
       this.rating = this.max;
     }
 
-    this.stars = Array(this.max).fill('/assets/ic_small_star.svg', 0, this.rating).fill('/assets/ic_small_star_empty.svg', this.rating, this.max);
+    this.stars = Array(this.max).fill('/assets/images/ic_small_star.svg', 0, this.rating).fill('/assets/images/ic_small_star_empty.svg', this.rating, this.max);
   }
 
 }

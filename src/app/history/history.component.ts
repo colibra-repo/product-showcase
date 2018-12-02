@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {DbService} from '../services/db.service';
+import {Observable, of} from 'rxjs';
+import {switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-history',
@@ -7,36 +10,29 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
-  activeTask = {
-    time: new Date(),
-    event: 'Lost luggage',
-    voters: {
-      current: 1,
-      total: 7
-    },
-    country: 'GB',
-    type: 'luggage',
-    completed: false
-  };
+  activeTasks$: Observable<any[]>;
+  completedTasks$: Observable<any[]>;
+  taskVotes: any;
 
-  completedTask = {
-    time: new Date(),
-    event: 'Lost luggage',
-    voters: {
-      current: 7,
-      total: 7
-    },
-    reward: 100,
-    horDelta: '+2',
-    country: 'GB',
-    type: 'luggage',
-    completed: true
-  };
+  private totalVotes = 7;
 
-  constructor() {
+  constructor(private db: DbService) {
+    this.taskVotes = this.db.getVotes();
   }
 
   ngOnInit() {
+    this.db.tasks$.pipe(switchMap((tasks: any[]) => {
+      const voted = tasks.filter(t => this.taskVotes.hasOwnProperty(t.task_id));
+      return of(voted);
+    })).subscribe((tasks: any[]) => {
+      const active = [];
+      const completed = [];
+      tasks.forEach(t => {
+        t.placed_votes.length < this.totalVotes ? active.push(t) : completed.push(t);
+        this.activeTasks$ = of(active);
+        this.completedTasks$ = of(completed);
+      });
+    });
   }
 
 }

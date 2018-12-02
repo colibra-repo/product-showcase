@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-trainings',
@@ -12,7 +13,7 @@ export class TrainingsComponent implements OnInit {
       title: 'Entry exam',
       description: 'Unlock Regular Tasks',
       language: 'English',
-      status: 'Completed',
+      status: 'general.completed',
       completed: true,
       type: 'luggage'
     },
@@ -22,7 +23,7 @@ export class TrainingsComponent implements OnInit {
       language: 'English',
       status: '1/3',
       completed: false,
-      type: 'health'
+      type: 'medical'
     },
     {
       title: 'Increase HOR',
@@ -34,9 +35,17 @@ export class TrainingsComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private translate: TranslateService ) { 
+  }
 
   ngOnInit() {
+    for (let training of this.trainings) {
+      if (training.completed) {
+        this.translate.get('general.completed').subscribe((label: string) => {
+          training.status = label;
+        })
+      }
+    }
   }
 
 }

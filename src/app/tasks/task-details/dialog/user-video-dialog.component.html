@@ -1,9 +1,9 @@
 <div mat-dialog-title class="mb-1" fxLayoutAlign="space-between center">
-  <h2 class="bold">Task Video</h2>
-  <img src="/assets/ic_small_close.svg" alt="" class="icon icon-close" (click)="close()">
+  <h2 class="bold">{{'pages.video.title' | translate}}</h2>
+  <img src="/assets/images/ic_small_close.svg" alt="" class="icon icon-close" (click)="close()">
 </div>
 <div class="mat-dialog-content col-dialog-content media-player-content">
-  <div fxLayoutAlign="space-between start" fxLayoutGap="2rem">
+  <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="space-between start" fxLayoutGap="2rem">
     <vg-player vg-responsive="true" fxFle="1 0 auto" (onPlayerReady)="onPlayerLoad($event)">
       <div *ngIf="activeCue" class="cueOverlay">
         <p>{{activeCue.text}}</p>
@@ -18,7 +18,7 @@
           <vg-scrub-bar-buffering-time class="buffering-time"></vg-scrub-bar-buffering-time>
           <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
 
-          <vg-scrub-bar-cue-points *ngIf="!!track" vgFor="user-video" [vgCuePoints]="track.cues">
+          <vg-scrub-bar-cue-points *ngIf="track" vgFor="user-video" [vgCuePoints]="track.cues">
           </vg-scrub-bar-cue-points>
         </vg-scrub-bar>
         <vg-fullscreen></vg-fullscreen>
@@ -28,7 +28,7 @@
       </video>
     </vg-player>
     <div fxLayout="column" fxLayoutGap="1.5rem" fxLayoutAlign="start start" fxFlex="1 0 20%">
-      <h2 class="bold">Key moments</h2>
+      <h2 class="bold">{{'pages.video.key_moments' | translate}}</h2>
       <div fxLayout="column" fxLayoutGap="1rem">
         <div *ngFor="let point of points" fxLayout="row" fxLayoutGap="0.5rem" (click)="jumpTo(point.second)"
              class="key-moments interactable">

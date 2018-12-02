@@ -1,6 +1,7 @@
 <div appBlurrable class="mat-typography">
   <app-header></app-header>
-  <main class="content" [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+  <main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''" fxLayout="column" fxLayoutAlign="start center"
+        class="content">
     <router-outlet #o="outlet"></router-outlet>
   </main>
   <app-mobile-menu fxShow fxHide.gt-sm></app-mobile-menu>

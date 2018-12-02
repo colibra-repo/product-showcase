@@ -2,7 +2,7 @@
   <mat-toolbar-row fxLayoutAlign="space-between center" fxLayoutAlign.gt-sm="space-between end">
     <div fxLayoutGap="1rem" fxLayoutAlign="center end" class="company-logo">
       <mat-icon svgIcon="logo" class="logo interactable" routerLink="/"></mat-icon>
-      <span fxHide fxShow.gt-sm>Task Manager</span>
+      <span fxHide fxShow.gt-sm>{{'header.label' | translate}}</span>
     </div>
     <app-desktop-menu fxHide fxShow.gt-sm></app-desktop-menu>
     <app-profile-menu></app-profile-menu>

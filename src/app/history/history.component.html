@@ -1,26 +1,36 @@
-<div fxLayout="column" fxLayoutGap="3rem">
-  <div class="container" fxLayout="column" fxLayoutGap="0.25rem">
+<div fxLayout="column" fxLayoutGap="3rem" class="tasks-container">
+  <div class="container" fxFlex="noshrink" fxLayout="column" fxLayoutGap="0.25rem">
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center" fxLayoutGap="8px"
          class="title">
       <mat-icon svgIcon="history" class="col-icon"></mat-icon>
-      <h2 class="bold marginless">Active tasks</h2>
+      <h2 class="bold marginless">{{'pages.history.activeTasksTitle' | translate}}</h2>
     </div>
-    <div fxLayout="row wrap" fxLayoutAlign="center center"
+    <div fxLayout="row wrap" fxLayoutAlign="start center"
          class="task-container">
-      <app-task-card *ngFor="let idx of [1,2,3,4,5,6,7,8]" [task]="activeTask"></app-task-card>
-      <app-task-card style="visibility: hidden; height: 0;"></app-task-card>
+      <ng-container *ngIf="activeTasks$ && (activeTasks$ | async).length; else noActiveTasks">
+        <app-task-card *ngFor="let activeTask of activeTasks$ | async" [task]="activeTask"></app-task-card>
+        <app-task-card style="visibility: hidden; height: 0;"></app-task-card>
+      </ng-container>
+      <ng-template #noActiveTasks>
+        <h4 class="bold marginless no-results">{{'pages.history.noActiveTasks' | translate}}</h4>
+      </ng-template>
     </div>
   </div>
-  <div class="container" fxLayout="column" fxLayoutGap="0.25rem">
+  <div class="container" fxFlex="noshrink" fxLayout="column" fxLayoutGap="0.25rem">
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center" fxLayoutGap="8px"
          class="title">
       <mat-icon svgIcon="history" class="col-icon"></mat-icon>
-      <h2 class="bold marginless">Completed tasks</h2>
+      <h2 class="bold marginless">{{'pages.history.completedTasksTitle' | translate}}</h2>
     </div>
-    <div fxLayout="row wrap" fxLayoutAlign="center center"
+    <div fxLayout="row wrap" fxLayoutAlign="start center"
          class="task-container">
-      <app-history-task-card *ngFor="let idx of [1,2,3,4,5,6,7,8]" [task]="completedTask"></app-history-task-card>
-      <app-history-task-card style="visibility: hidden; height: 0;"></app-history-task-card>
+      <ng-container *ngIf="completedTasks$ && (completedTasks$ | async).length; else noCompletedTasks">
+        <app-history-task-card *ngFor="let completedTask of completedTasks$ | async" [task]="completedTask"></app-history-task-card>
+        <app-history-task-card style="visibility: hidden; height: 0;"></app-history-task-card>
+      </ng-container>
+      <ng-template #noCompletedTasks>
+        <h4 class="bold marginless no-results">{{'pages.history.noCompletedTasks' | translate}}</h4>
+      </ng-template>
     </div>
   </div>
 </div>
