@@ -35,7 +35,7 @@ export class AppComponent {
     this.matIconRegistry.addSvgIcon('trainings', this.sanitizer.bypassSecurityTrustResourceUrl('/assets/images/ic_trainings.svg'));
 
     // Initialize translate service
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
+    this.translate.setDefaultLang('bg');
+    this.translate.use('bg');
   }
 }
