@@ -10,25 +10,25 @@ export class TrainingsComponent implements OnInit {
 
   trainings = [
     {
-      title: 'Entry exam',
-      description: 'Unlock Regular Tasks',
-      language: 'English',
+      title: 'pages.trainings.firstTraining.name',
+      description: 'pages.trainings.firstTraining.effect',
+      language: 'pages.trainings.firstTraining.language',
       status: 'general.completed',
       completed: true,
       type: 'luggage'
     },
     {
-      title: 'Medical exam',
-      description: 'Unlock Medical Tasks',
-      language: 'English',
+      title: 'pages.trainings.secondTraining.name',
+      description: 'pages.trainings.secondTraining.effect',
+      language: 'pages.trainings.secondTraining.language',
       status: '1/3',
       completed: false,
       type: 'medical'
     },
     {
-      title: 'Increase HOR',
-      description: 'Unlock Medical Tasks',
-      language: 'German',
+      title: 'pages.trainings.thirdTraining.name',
+      description: 'pages.trainings.thirdTraining.effect',
+      language: 'pages.trainings.thirdTraining.language',
       status: '1/3',
       completed: false,
       type: 'colibra'
@@ -45,6 +45,15 @@ export class TrainingsComponent implements OnInit {
           training.status = label;
         })
       }
+      this.translate.get(training.title).subscribe((label: string) => {
+        training.title = label;
+      })
+      this.translate.get(training.description).subscribe((label: string) => {
+        training.description = label;
+      })
+      this.translate.get(training.language).subscribe((label: string) => {
+        training.language = label;
+      })
     }
   }
 

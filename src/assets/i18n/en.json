@@ -108,7 +108,22 @@
       "trainings": {
         "title": "Trainings",
         "add_language": "Add Language",
-        "language": "Language"
+        "language": "Language",
+        "firstTraining": {
+            "name": "Entry exam",
+            "effect": "Unlock regular tasks",
+            "language": "English"
+        },
+        "secondTraining": {
+            "name": "Medical exam",
+            "effect": "Unlock regular tasks",
+            "language": "English"
+        },
+        "thirdTraining": {
+            "name": "Increase HOR",
+            "effect": "Unlock medical tasks",
+            "language": "German"
+        }
       },
       "profile": {
         "labels": {

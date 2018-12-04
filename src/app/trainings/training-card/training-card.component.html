@@ -5,9 +5,9 @@
         <div fxLayoutAlign="center center" class="task-type">
           <mat-icon [svgIcon]="'task_' + training?.type" class="task-icon"></mat-icon>
         </div>        <div fxLayout="column" fxLayoutAlign="center start">
-          <span class="bold">{{training?.title}}</span>
-          <span>{{training?.description}}</span>
-          <span>{{'pages.trainings.language' | translate}}: {{training?.language}}</span>
+          <span class="bold">{{training?.title | translate}}</span>
+          <span>{{training?.description | translate}}</span>
+          <span>{{'pages.trainings.language' | translate}}: {{training?.language | translate}}</span>
         </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between center">

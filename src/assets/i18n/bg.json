@@ -108,7 +108,22 @@
       "trainings": {
         "title": "Обучения",
         "add_language": "Добави език",
-        "language": "Език"
+        "language": "Език",
+        "firstTraining": {
+          "name": "Входен изпит",
+          "effect": "Отключва обикновени задачи",
+          "language": "Бъгларски"
+        },
+        "secondTraining": {
+          "name": "Медицински изпит",
+          "effect": "Отключва обикновени задачи",
+          "language": "Бъгларски"
+        },
+        "thirdTraining": {
+          "name": "Увеличи ХОР",
+          "effect": "Отключва медицински задачи",
+          "language": "Английки"
+        }
       },
       "profile": {
         "labels": {
