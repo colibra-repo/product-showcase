@@ -158,7 +158,7 @@
             </div>
           </div>
           <div fxLayout="row" fxFlexAlign="end">
-            <button mat-flat-button>{{'pages.task.details.view_document' | translate}}</button>
+            <button mat-flat-button (click)="openInNewTab(task.bill_link)">{{'pages.task.details.view_document' | translate}}</button>
           </div>
         </div>
         <div fxFlex="100%" fxFlex.gt-md="33.333%" fxLayout="column" fxLayoutGap="1rem">
@@ -173,7 +173,7 @@
                 <span class="bold">{{additional_document.name}}</span>
               </div>
               <div fxFlex="0%" fxFlex.gt-md="33.333%" fxLayoutAlign="end center" fxLayoutAlign.gt-md="start stretch">
-                <button mat-flat-button>{{'pages.task.details.view_document' | translate}}</button>
+                <button mat-flat-button (click)="openInNewTab(additional_document.link)">{{'pages.task.details.view_document' | translate}}</button>
               </div>
             </div>
             <div fxLayout="row" fxLayoutAlign="start center">

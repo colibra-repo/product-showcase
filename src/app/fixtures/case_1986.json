@@ -1,0 +1,126 @@
+{
+  "task_id": "1986",
+  "insurance_type": "Medical",
+  "incident_desc": "Head Injury",
+  "incident_time": "2",
+  "decision_risk": "enums.levels.low",
+
+  "task_stake": {
+    "hor": {
+      "positive": 2,
+      "negative": -2
+    },
+    "tokens": 10,
+    "stake": 32
+  },
+  "travel_profile": {
+    "gender": "enums.gender.male",
+    "risk_score": "enums.levels.medium",
+    "type": "enums.profile.adventure"
+  },
+  "location": {
+    "lat": 37.1224063,
+    "lng": -8.6684011,
+    "address": "Algrave, Portugal"
+  },
+  "hospital": {
+    "name": "Hospital Particular do Algarve",
+    "success_rate": "86%",
+    "success_comparison": "enums.comparison.above_expectations",
+    "rating": 2.9
+  },
+  "bill_link": "/assets/cases/1986_hospital_bill.jpg",
+  "bill_details": [
+    {
+      "name": "X-Ray",
+      "price": "40 USD",
+      "average": "45 USD",
+      "comparison": "enums.comparison.as_expectations",
+      "comparison_positive": true
+    },
+    {
+      "name": "MRI",
+      "price": "1020 USD",
+      "average": "800 USD",
+      "comparison": "enums.comparison.above_expectations",
+      "comparison_positive": false
+    },
+    {
+      "name": "Examination",
+      "price": "40 USD",
+      "average": "45 USD",
+      "comparison": "enums.comparison.as_expectations",
+      "comparison_positive": true
+    },
+    {
+      "name": "Total",
+      "price": "1100 USD",
+      "average": "88 USD",
+      "comparison": "enums.comparison.above_expectations",
+      "comparison_positive": false
+    }
+  ],
+  "additional_documents": [
+    {
+      "name": "Doctor\"s Perscription",
+      "link": "/assets/cases/1986_medical_report.pdf"
+    },
+    {
+      "name": "X-Ray",
+      "link": "/assets/cases/1986_xray.jpg"
+    },
+	{
+      "name": "Photo",
+      "link": "/assets/cases/1986_photo.jpg"
+    },
+	{
+    "name": "MRI",
+    "link": "/assets/cases/1986_MRI.png"
+    }
+  ],
+  "video_data": {
+    "video_url": "http://static.videogular.com/assets/videos/videogular.mp4",
+    "thumbnail_url": "/assets/images/thumbnail.png",
+    "cues": [
+      {"second": 5, "text": "Hesitation"},
+      {"second": 10, "text": "Increased Pulse"}
+    ]
+  },
+  "nearby_hospitals": [
+    {
+      "name": "Centro Hospitalar do Algarve",
+      "lng": -8.7209314,
+      "lat": 37.1223433,
+      "distance": "7km",
+      "google_score": 3.8,
+      "colibra_score": 7
+    },
+    {
+      "name": "Hospital Distrital de Lagos",
+      "lng": -8.6757888,
+      "lat": 37.1045862,
+      "distance": "9km",
+      "google_score": 2.7,
+      "colibra_score": 3
+    },
+    {
+      "name": "Hospital Particular do Algarve",
+      "lng": -8.7209314,
+      "lat": 37.1223433,
+      "distance": "9km",
+      "google_score": 2.9,
+      "colibra_score": 4,
+      "selected": true
+    }
+  ],
+  "placed_votes": [
+    true,
+    false,
+    true
+  ],
+  "remaining_votes": [
+    false,
+    true,
+    true
+  ]
+}

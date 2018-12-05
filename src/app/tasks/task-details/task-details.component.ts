@@ -59,6 +59,10 @@ export class TaskDetailsComponent implements OnInit {
     });
   }
 
+  openInNewTab(link: string) {
+    window.open(link, '_blank');
+  }
+
   vote(value: boolean) {
     this.db.vote(this.task.task_id, value);
     this._router.navigate(['/history']);
