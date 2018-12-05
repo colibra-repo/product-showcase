@@ -1,5 +1,10 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
+import * as first_case from '../fixtures/case_1983.json'
+import * as second_case from '../fixtures/case_1984.json'
+import * as third_case from '../fixtures/case_1985.json'
+import * as fourth_case from '../fixtures/case_1986.json'
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,121 +12,12 @@ import {BehaviorSubject, Observable} from 'rxjs';
 export class DbService {
 
   private _tasks: any[] = [
-    {
-      'task_id': '1983',
-      'insurance_type': 'Medical',
-      'incident_desc': 'Broken arm',
-      'incident_time': '2',
-      'decision_risk': 'enums.levels.low',
-
-      'task_stake': {
-        'hor': {
-          'positive': 2,
-          'negative': -2
-        },
-        'tokens': 10,
-        'stake': 32
-      },
-      'travel_profile': {
-        'gender': 'enums.gender.female',
-        'risk_score': 'enums.levels.medium',
-        'type': 'enums.profile.adventure'
-      },
-      'location': {
-        'lat': -6.2658911,
-        'lng': 39.5285832,
-        'address': 'Paje, Zanzibar, Tanzania'
-      },
-      'hospital': {
-        'name': 'Stone Town Hospital',
-        'success_rate': '75%',
-        'success_comparison': 'enums.comparison.above_expectations',
-        'rating': 5
-      },
-      'bill_details': [
-        {
-          'name': 'Mouth',
-          'price': '10 USD',
-          'average': '12 USD',
-          'comparison': 'enums.comparison.as_expectations',
-          'comparison_positive': true
-        },
-        {
-          'name': 'Monthly Cases',
-          'price': '32 USD',
-          'average': '25 USD',
-          'comparison': 'enums.comparison.above_expectations',
-          'comparison_positive': false
-        },
-        {
-          'name': 'X-Ray',
-          'price': '10 USD',
-          'average': '8 USD',
-          'comparison': 'enums.comparison.as_expectations',
-          'comparison_positive': true
-        },
-        {
-          'name': 'Bill',
-          'price': '52 USD',
-          'average': '67 USD',
-          'comparison': 'enums.comparison.as_expectations',
-          'comparison_positive': true
-        }
-      ],
-      'additional_documents': [
-        {'name': 'Doctor\'s perscription'},
-        {'name': 'X-Ray'}
-      ],
-      'video_data': {
-        'video_url': 'http://static.videogular.com/assets/videos/videogular.mp4',
-        'thumbnail_url': '/assets/images/thumbnail.png',
-        'cues': [
-          {'second': 5, 'text': 'First key moment'},
-          {'second': 10, 'text': 'Second key moment'},
-          {'second': 20, 'text': 'Third key moment'},
-          {'second': 50, 'text': 'Fourth key moment'},
-          {'second': 60, 'text': 'Fifth key moment'}
-        ]
-      },
-      'nearby_hospitals': [
-        {
-          'name': 'Makunduchi Hospital - Jambiani',
-          'lng': 39.5533225,
-          'lat': -6.4167666,
-          'distance': '3km',
-          'google_score': 3,
-          'colibra_score': 3
-        },
-        {
-          'name': 'Ali Amour Hospital - Stone Town',
-          'lng': 39.2000556,
-          'lat': -6.1766356,
-          'distance': '9km',
-          'google_score': 4,
-          'colibra_score': 6.5
-        },
-        {
-          'name': 'Stone Town Hospital - Stone Town',
-          'lng': 39.1886372,
-          'lat': -6.1625386,
-          'distance': '9km',
-          'google_score': 5,
-          'colibra_score': 8,
-          'selected': true
-        }
-      ],
-      'placed_votes': [
-        true,
-        false,
-        true
-      ],
-      'remaining_votes': [
-        true,
-        true,
-        true
-      ]
-    }
+    first_case.default,
+    second_case.default,
+    third_case.default,
+    fourth_case.default
   ];
+  
   private tasksSubject: BehaviorSubject<any[]> = new BehaviorSubject(this._tasks);
   private _taskVotes = {};
 

@@ -1,0 +1,113 @@
+{
+  "task_id": "1984",
+  "insurance_type": "Medical",
+  "incident_desc": "Food Poisoning",
+  "incident_time": "1",
+  "decision_risk": "enums.levels.low",
+
+  "task_stake": {
+    "hor": {
+      "positive": 2,
+      "negative": -2
+    },
+    "tokens": 10,
+    "stake": 32
+  },
+  "travel_profile": {
+    "gender": "enums.gender.female",
+    "risk_score": "enums.levels.low",
+    "type": "enums.profile.business"
+  },
+  "location": {
+    "lat": 51.9226861,
+    "lng": 4.4774636,
+    "address": "Hilton Rotterdam, Rotterdam, Netherlands"
+  },
+  "hospital": {
+    "name": "Clinique de la Muette",
+    "success_rate": "99%",
+    "success_comparison": "enums.comparison.above_expectations",
+    "rating": 6.5
+  },
+  "bill_link": "/assets/cases/1984_hospital_bill.jpg",
+  "bill_details": [
+    {
+      "name": "Examination",
+      "price": "100 EUR",
+      "average": "85 USD",
+      "comparison": "enums.comparison.as_expectations",
+      "comparison_positive": true
+    },
+    {
+      "name": "Pharmacy",
+      "price": "27 EUR",
+      "average": "35 EUR",
+      "comparison": "enums.comparison.as_expectations",
+      "comparison_positive": true
+    },
+ 
+    {
+      "name": "Total",
+      "price": "127 EUR",
+      "average": "20 EUR",
+      "comparison": "enums.comparison.as_expectations",
+      "comparison_positive": true
+    }
+  ],
+  "additional_documents": [
+    {
+      "name": "Medical Report",
+      "link": "/assets/cases/1984_medical_report.pdf"
+    },
+	{
+      "name": "Pharmacy Bill",
+      "link": "/assets/cases/1984_pharmacy_bill.png"
+    }
+  ],
+  "video_data": {
+    "video_url": "http://static.videogular.com/assets/videos/videogular.mp4",
+    "thumbnail_url": "/assets/images/thumbnail.png",
+    "cues": [
+      {"second": 5, "text": "Hesitation"},
+      {"second": 18, "text": "Higher pulse"},
+      {"second": 23, "text": "Hesitation"}
+    ]
+  },
+  "nearby_hospitals": [
+    {
+      "name": "Erasmus University Medical Center",
+      "lng": 4.4590994,
+      "lat": 51.9108848,
+      "distance": "7km",
+      "google_score": 3.8,
+      "colibra_score": 9
+    },
+    {
+      "name": "Polikliniek Interne Geneeskunde, Franciscus Gasthuis & Vlietland",
+      "lng": 4.4700877,
+      "lat": 51.9227011,
+      "distance": "5km",
+      "google_score": 5,
+      "colibra_score": 2,
+      "selected": true
+    },
+    {
+      "name": "Ikazia Hospital Rotterdam",
+      "lng": 4.485152,
+      "lat": 51.886169,
+      "distance": "12km",
+      "google_score": 4.1,
+      "colibra_score": 6
+    }
+  ],
+  "placed_votes": [
+    true,
+    true,
+    true
+  ],
+  "remaining_votes": [
+    true,
+    true,
+    true
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "task_id": "1985",
+  "insurance_type": "Medical",
+  "incident_desc": "Food Poisoning",
+  "incident_time": "1",
+  "decision_risk": "enums.levels.low",
+
+  "task_stake": {
+    "hor": {
+      "positive": 2,
+      "negative": -2
+    },
+    "tokens": 10,
+    "stake": 32
+  },
+  "travel_profile": {
+    "gender": "enums.gender.male",
+    "risk_score": "enums.levels.low",
+    "type": "enums.profile.tourist"
+  },
+  "location": {
+    "lat": 48.8586205,
+    "lng": 2.2914983,
+    "address": "Eiffel Tower, Paris, France"
+  },
+  "hospital": {
+    "name": "Clinique de la Muette",
+    "success_rate": "99%",
+    "success_comparison": "enums.comparison.above_expectations",
+    "rating": 6.5
+  },
+  "bill_link": "/assets/cases/1985_hospital_bill.jpg",
+  "bill_details": [
+    {
+      "name": "Examination",
+      "price": "50 EUR",
+      "average": "48 USD",
+      "comparison": "enums.comparison.as_expectations",
+      "comparison_positive": true
+    },
+    {
+      "name": "Blood Test",
+      "price": "120 EUR",
+      "average": "118 EUR",
+      "comparison": "enums.comparison.as_expectations",
+      "comparison_positive": true
+    },
+    {
+      "name": "Stool Culture",
+      "price": "80 EUR",
+      "average": "72 EUR",
+      "comparison": "enums.comparison.as_expectations",
+      "comparison_positive": true
+    },
+    {
+      "name": "Total",
+      "price": "250 EUR",
+      "average": "238 EUR",
+      "comparison": "enums.comparison.as_expectations",
+      "comparison_positive": true
+    }
+  ],
+  "additional_documents": [
+    {
+      "name": "Medical Report",
+      "link": "/assets/cases/1985_medical_report.pdf"
+    },
+	{
+      "name": "Blood Test",
+      "link": "/assets/cases/1985_blood_test.jpg"
+    },
+    {
+      "name": "Stool Culture",
+      "link": "/assets/cases/1985_stool_culture.jpg"
+    }
+  ],
+  "video_data": {
+    "video_url": "http://static.videogular.com/assets/videos/videogular.mp4",
+    "thumbnail_url": "/assets/images/thumbnail.png",
+    "cues": [
+      {"second": 5, "text": "Hesitation"},
+      {"second": 18, "text": "Higher pulse"},
+      {"second": 23, "text": "Hesitation"}
+    ]
+  },
+  "nearby_hospitals": [
+    {
+      "name": "Clinical Spontini",
+      "lng": 2.2743722,
+      "lat": 48.8617056,
+      "distance": "7km",
+      "google_score": 5,
+      "colibra_score": 7
+    },
+    {
+      "name": "Clinique de la Muette",
+      "lng": 2.2743722,
+      "lat": 48.8617056,
+      "distance": "4km",
+      "google_score": 4,
+      "colibra_score": 6.5,
+      "selected": true
+    },
+    {
+      "name": "Hospital Victor Jousselin De Dreux",
+      "lng": 2.2849322,
+      "lat": 48.8586378,
+      "distance": "2km",
+      "google_score": 1,
+      "colibra_score": 2
+    }
+  ],
+  "placed_votes": [
+    true,
+    true,
+    true
+  ],
+  "remaining_votes": [
+    true,
+    true,
+    true
+  ]
+}
