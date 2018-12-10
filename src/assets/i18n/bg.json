@@ -140,11 +140,11 @@
           "current_tokens": "Текущи колибра токени",
           "vested_tokens": "Преведени колибра токени",
           "withdrawable_tokens": "Изтегляеми колибра токени",
-          "deposit": "Депозити",
+          "deposit": "Депозирай",
           "withdraw": "Изтегли"
         },
         "constants": {
-          "name": "Иван Черногорски",
+          "name": "John Doe",
           "level": "5 - Експерт",
           "to_next_level": "До следващото ниво:",
           "verified_status": "Верифициран",

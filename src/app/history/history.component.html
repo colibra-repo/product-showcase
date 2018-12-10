@@ -12,7 +12,9 @@
         <app-task-card style="visibility: hidden; height: 0;"></app-task-card>
       </ng-container>
       <ng-template #noActiveTasks>
-        <h4 class="bold marginless no-results">{{'pages.history.noActiveTasks' | translate}}</h4>
+        <div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center">
+          <h4 class="bold marginless no-results">{{'pages.history.noActiveTasks' | translate}}</h4>
+        </div>
       </ng-template>
     </div>
   </div>
@@ -25,11 +27,14 @@
     <div fxLayout="row wrap" fxLayoutAlign="start center"
          class="task-container">
       <ng-container *ngIf="completedTasks$ && (completedTasks$ | async).length; else noCompletedTasks">
-        <app-history-task-card *ngFor="let completedTask of completedTasks$ | async" [task]="completedTask"></app-history-task-card>
+        <app-history-task-card *ngFor="let completedTask of completedTasks$ | async"
+                               [task]="completedTask"></app-history-task-card>
         <app-history-task-card style="visibility: hidden; height: 0;"></app-history-task-card>
       </ng-container>
       <ng-template #noCompletedTasks>
-        <h4 class="bold marginless no-results">{{'pages.history.noCompletedTasks' | translate}}</h4>
+        <div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center">
+          <h4 class="bold marginless no-results">{{'pages.history.noCompletedTasks' | translate}}</h4>
+        </div>
       </ng-template>
     </div>
   </div>

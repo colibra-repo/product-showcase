@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import {Component, OnInit} from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-trainings',
@@ -35,26 +35,9 @@ export class TrainingsComponent implements OnInit {
     }
   ];
 
-  constructor(private translate: TranslateService ) { 
+  constructor() {
   }
 
   ngOnInit() {
-    for (let training of this.trainings) {
-      if (training.completed) {
-        this.translate.get('general.completed').subscribe((label: string) => {
-          training.status = label;
-        })
-      }
-      this.translate.get(training.title).subscribe((label: string) => {
-        training.title = label;
-      })
-      this.translate.get(training.description).subscribe((label: string) => {
-        training.description = label;
-      })
-      this.translate.get(training.language).subscribe((label: string) => {
-        training.language = label;
-      })
-    }
   }
-
 }

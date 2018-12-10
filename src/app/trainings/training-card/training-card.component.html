@@ -11,7 +11,7 @@
         </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>{{'general.status' | translate}}: {{training?.status}}</div>
+        <div>{{'general.status' | translate}}: {{training?.status | translate}}</div>
         <ng-container *ngIf="!training?.completed; else spacer">
           <button mat-flat-button class="task-button">{{'general.continue' | translate}}</button>
         </ng-container>
