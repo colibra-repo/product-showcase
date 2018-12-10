@@ -18,15 +18,16 @@ hr {
   height: 30px;
   border-radius: 4px;
   background-color: #54bc79;
+  color: #ffffff;
   line-height: 1.6;
 }
 
 .actions {
-  .mat-flat-button.mat-primary.bg-orange {
+  .mat-flat-button.bg-orange {
     color: #ffffff;
-    width: 126px;
     height: 30px;
     border-radius: 4px;
+    padding: 0 10px;
     background-color: #f47f25;
     line-height: 1.6;
   }

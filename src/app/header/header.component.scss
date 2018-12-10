@@ -5,7 +5,7 @@
   z-index: 1000;
 
   &.mat-toolbar {
-    padding: 0px 7%;
+    padding: 0;
     background-color: #ffffff;
     -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
@@ -27,6 +27,7 @@
     position: relative;
 
     &.mat-toolbar {
+      padding: 0px 2vw;
       .mat-toolbar-row {
         .company-logo, .settings {
           padding-bottom: 20px;

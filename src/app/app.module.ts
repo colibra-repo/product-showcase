@@ -25,10 +25,12 @@ import {ScoreComponent} from './score/score.component';
 import {BlurrableDirective} from './directives/blurrable.directive';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {ProfileComponent} from './profile/profile.component';
-import { BarChartComponent } from './task-details/bar-chart/bar-chart.component';
+import {BarChartComponent} from './task-details/bar-chart/bar-chart.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { SignedNumberPipe } from './pipes/signed-number.pipe';
+import {SignedNumberPipe} from './pipes/signed-number.pipe';
+import {LanguageSelectionComponent} from './language-selection/language-selection.component';
+import {FormsModule} from '@angular/forms';
 
 
 Number.prototype.toTimestampString = function () {
@@ -76,10 +78,12 @@ export function createTranslateLoader(http: HttpClient) {
     ProfileComponent,
     BarChartComponent,
     SignedNumberPipe,
+    LanguageSelectionComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     FlexLayoutModule,
     RoutingModule,
     MaterialModule,

@@ -1,0 +1,17 @@
+<div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+  <i class="icon fas fa-globe"></i>
+  <mat-form-field *ngIf="!isMobile">
+    <mat-select [(ngModel)]="currentLanguage" (ngModelChange)="changeLanguage($event)">
+      <mat-option *ngFor="let language of languages" [value]="language.code">
+        {{language.displayName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf="isMobile" class="mobile-language-select">
+    <select matNativeControl [(ngModel)]="currentLanguage" (ngModelChange)="changeLanguage($event)">
+      <option *ngFor="let language of languages" [value]="language.code">
+        {{language.code | uppercase}}
+      </option>
+    </select>
+  </mat-form-field>
+</div>
