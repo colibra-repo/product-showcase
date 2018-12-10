@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
-import {MediaChange, ObservableMedia} from '@angular/flex-layout';
+import {ObservableMedia} from '@angular/flex-layout';
 
 export const supportedLanguages = [
   {code: 'en', displayName: 'English'},
@@ -14,7 +14,7 @@ export const supportedLanguages = [
 })
 export class LanguageSelectionComponent implements OnInit {
 
-  languages = supportedLanguages;
+  languages = this.sortAlphabetically(supportedLanguages);
   currentLanguage = 'en';
 
   constructor(private translate: TranslateService, private om: ObservableMedia) {
@@ -31,5 +31,9 @@ export class LanguageSelectionComponent implements OnInit {
 
   changeLanguage(lang: string) {
     this.translate.use(lang);
+  }
+
+  private sortAlphabetically(languages: any[]) {
+    return languages.sort((a, b) => (a.displayName > b.displayName) ? 1 : ((b.displayName > a.displayName) ? -1 : 0));
   }
 }
