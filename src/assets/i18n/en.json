@@ -140,7 +140,7 @@
           "current_tokens": "Current ColibraTokens",
           "vested_tokens": "Vested ColibraTokens",
           "withdrawable_tokens": "Withdrawable ColibraTokens",
-          "deposit": "Deposits",
+          "deposit": "Deposit",
           "withdraw": "Withdraw"
         },
         "constants": {
