@@ -5,7 +5,7 @@
       <mat-icon svgIcon="history" class="col-icon"></mat-icon>
       <h2 class="bold marginless">{{'pages.history.activeTasksTitle' | translate}}</h2>
     </div>
-    <div fxLayout="row wrap" fxLayoutAlign="start center"
+    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center"
          class="task-container">
       <ng-container *ngIf="activeTasks$ && (activeTasks$ | async).length; else noActiveTasks">
         <app-task-card *ngFor="let activeTask of activeTasks$ | async" [task]="activeTask"></app-task-card>
@@ -24,7 +24,7 @@
       <mat-icon svgIcon="history" class="col-icon"></mat-icon>
       <h2 class="bold marginless">{{'pages.history.completedTasksTitle' | translate}}</h2>
     </div>
-    <div fxLayout="row wrap" fxLayoutAlign="start center"
+    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center"
          class="task-container">
       <ng-container *ngIf="completedTasks$ && (completedTasks$ | async).length; else noCompletedTasks">
         <app-history-task-card *ngFor="let completedTask of completedTasks$ | async"

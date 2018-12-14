@@ -1,0 +1,49 @@
+// Notifications
+.notification-item {
+  cursor: pointer;
+
+  &.unread {
+    background-color: #effff4;
+  }
+
+  .icon-container {
+    width: 6ch;
+    height: 6ch;
+    border-radius: 100%;
+    font-size: 0.75rem;
+    color: #ffffff;
+
+    &.failure {
+      background-color: #bd5555;
+    }
+
+    &.success {
+      background-color: #55bd79;
+    }
+
+    .icon {
+      color: #ffffff;
+    }
+  }
+
+  &:hover {
+    background-color: #effff4;
+  }
+}
+
+.notification-item,
+.empty-placeholder {
+  padding: 10px;
+}
+
+::ng-deep .mat-menu-panel {
+  max-width: 35ch !important;
+}
+
+.shown {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
