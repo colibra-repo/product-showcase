@@ -34,14 +34,14 @@
       "female": "Female"
     },
     "comparison": {
-       "below_expectations": "Below average",
-       "as_expectations": "Within range",
-       "above_expectations": "Above average"
+      "below_expectations": "Below average",
+      "as_expectations": "Within range",
+      "above_expectations": "Above average"
     },
     "profile": {
-       "adventure": "Adventure",
-       "business": "Business",
-       "tourist": "Tourist"
+      "adventure": "Adventure",
+      "business": "Business",
+      "tourist": "Tourist"
     }
   },
   "menu": {
@@ -50,110 +50,113 @@
     "trainings": "Trainings",
     "profile": "Profile"
   },
-  "pages":{
-      "task": {
-        "task": "Task",
-        "time": "Time",
-        "type": "Type",
-        "location": "Location",
-        "event": "Event:",
-        "reward": "Reward:",
-        "details": {
-          "travel_profile": "Travel Profile",
-          "gender": "Gender",
-          "risk_score": "Risk Score",
-          "task_information": "Task Information",
-          "view_map": "View Task Map",
-          "hospital_info": "Hospital Information",
-          "hospital": "Hospital",
-          "bill_details": "Bill Details",
-          "view_document": "View Document",
-          "support_docs": "Support documents",
-          "user_video": "User Video"
-        },
-        "result_card": {
-            "your_vote": "Your vote:",
-            "tokens": "Tokens",
-            "stake_outcome": "Stake outcome",
-            "task_outcome": "Task outcome:",
-            "task_status": "Task status:",
-            "paid": "Paid",
-            "voted_true": "Voted True:",
-            "voted_false": "Voted False:"
-        },
-        "vote_true": "Vote True",
-        "vote_false": "Vote False",
-        "vote": "Vote"
+  "pages": {
+    "task": {
+      "task": "Task",
+      "time": "Time",
+      "type": "Type",
+      "location": "Location",
+      "event": "Event:",
+      "reward": "Reward:",
+      "details": {
+        "travel_profile": "Travel Profile",
+        "gender": "Gender",
+        "risk_score": "Risk Score",
+        "task_information": "Task Information",
+        "view_map": "View Task Map",
+        "hospital_info": "Hospital Information",
+        "hospital": "Hospital",
+        "bill_details": "Bill Details",
+        "view_document": "View Document",
+        "support_docs": "Support documents",
+        "user_video": "User Video"
       },
-      "map": {
-        "title": "Task Map",
-        "near_hospitals": "Hospitals nearby",
-        "customer_choice": "Customer's choice",
-        "decision_risk": "Decision Risk"
+      "result_card": {
+        "your_vote": "Your vote:",
+        "tokens": "Tokens",
+        "stake_outcome": "Stake outcome",
+        "task_outcome": "Task outcome:",
+        "task_status": "Task status:",
+        "paid": "Paid",
+        "voted_true": "Voted True:",
+        "voted_false": "Voted False:"
       },
-      "video": {
-        "title": "Task Video",
-        "key_moments": "Key moments"
+      "vote_true": "Vote True",
+      "vote_false": "Vote False",
+      "vote": "Vote"
+    },
+    "map": {
+      "title": "Task Map",
+      "near_hospitals": "Hospitals nearby",
+      "customer_choice": "Customer's choice",
+      "decision_risk": "Decision Risk"
+    },
+    "video": {
+      "title": "Task Video",
+      "key_moments": "Key moments"
+    },
+    "tasks": {
+      "title": "Latest tasks",
+      "no_tasks": "No tasks."
+    },
+    "history": {
+      "activeTasksTitle": "Active tasks",
+      "noActiveTasks": "No active tasks.",
+      "completedTasksTitle": "Completed tasks",
+      "noCompletedTasks": "No completed tasks."
+    },
+    "trainings": {
+      "title": "Trainings",
+      "add_language": "Add Language",
+      "language": "Language",
+      "firstTraining": {
+        "name": "Entry exam",
+        "effect": "Unlock regular tasks",
+        "language": "English"
       },
-      "tasks": {
-        "title": "Latest tasks",
-        "no_tasks": "No tasks."
+      "secondTraining": {
+        "name": "Medical exam",
+        "effect": "Unlock regular tasks",
+        "language": "English"
       },
-      "history": {
-        "activeTasksTitle": "Active tasks",
-        "noActiveTasks": "No active tasks.",
-        "completedTasksTitle": "Completed tasks",
-        "noCompletedTasks": "No completed tasks." 
-      },
-      "trainings": {
-        "title": "Trainings",
-        "add_language": "Add Language",
-        "language": "Language",
-        "firstTraining": {
-            "name": "Entry exam",
-            "effect": "Unlock regular tasks",
-            "language": "English"
-        },
-        "secondTraining": {
-            "name": "Medical exam",
-            "effect": "Unlock regular tasks",
-            "language": "English"
-        },
-        "thirdTraining": {
-            "name": "Increase HOR",
-            "effect": "Unlock medical tasks",
-            "language": "German"
-        }
-      },
-      "profile": {
-        "labels": {
-          "level": "Level",
-          "status": "Current status",
-          "account": "Account",
-          "profile_info": "Profile Information",
-          "birth_date": "Date of Birth",
-          "birth_city": "City of Birth",
-          "verification": "Verification",
-          "languages": "Languages",
-          "statistics": "Statistics",
-          "total_tokens": "Lifetime ColibraTokens",
-          "current_tokens": "Current ColibraTokens",
-          "vested_tokens": "Vested ColibraTokens",
-          "withdrawable_tokens": "Withdrawable ColibraTokens",
-          "deposit": "Deposit",
-          "withdraw": "Withdraw"
-        },
-        "constants": {
-          "name": "John Doe",
-          "level": "5 - Expert",
-          "to_next_level": "To next level:",
-          "verified_status": "Verified",
-          "status": "Awaiting decision on Task 1762",
-          "birth_date": "18 February 1976",
-          "birth_city": "Orlando",
-          "verification": "ID",
-          "languages": "English, French"
-        }
+      "thirdTraining": {
+        "name": "Increase HOR",
+        "effect": "Unlock medical tasks",
+        "language": "German"
       }
+    },
+    "profile": {
+      "labels": {
+        "level": "Level",
+        "status": "Current status",
+        "account": "Account",
+        "profile_info": "Profile Information",
+        "birth_date": "Date of Birth",
+        "birth_city": "City of Birth",
+        "verification": "Verification",
+        "languages": "Languages",
+        "statistics": "Statistics",
+        "total_tokens": "Lifetime ColibraTokens",
+        "current_tokens": "Current ColibraTokens",
+        "vested_tokens": "Vested ColibraTokens",
+        "withdrawable_tokens": "Withdrawable ColibraTokens",
+        "deposit": "Deposit",
+        "withdraw": "Withdraw"
+      },
+      "constants": {
+        "name": "John Doe",
+        "level": "5 - Expert",
+        "to_next_level": "To next level:",
+        "verified_status": "Verified",
+        "status": "Awaiting decision on Task 1762",
+        "birth_date": "18 February 1976",
+        "birth_city": "Orlando",
+        "verification": "ID",
+        "languages": "English, French"
+      }
+    }
+  },
+  "notifications": {
+    "noNotifications": "No notifications."
   }
 }

@@ -31,6 +31,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {SignedNumberPipe} from './pipes/signed-number.pipe';
 import {LanguageSelectionComponent} from './language-selection/language-selection.component';
 import {FormsModule} from '@angular/forms';
+import {TimeAgoPipe} from 'time-ago-pipe';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 
 Number.prototype.toTimestampString = function () {
@@ -78,7 +80,9 @@ export function createTranslateLoader(http: HttpClient) {
     ProfileComponent,
     BarChartComponent,
     SignedNumberPipe,
-    LanguageSelectionComponent
+    LanguageSelectionComponent,
+    TimeAgoPipe,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,

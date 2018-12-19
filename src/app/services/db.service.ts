@@ -1,9 +1,11 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-import * as first_case from '../fixtures/case_1983.json'
-import * as second_case from '../fixtures/case_1984.json'
-import * as third_case from '../fixtures/case_1985.json'
-import * as fourth_case from '../fixtures/case_1986.json'
+import * as first_case from '../fixtures/case_1983.json';
+import * as second_case from '../fixtures/case_1984.json';
+import * as third_case from '../fixtures/case_1985.json';
+import * as fourth_case from '../fixtures/case_1986.json';
+import {NotificationsService} from '../notifications/notifications.service';
+import {NotificationType} from '../profile-menu/profile-menu.component';
 
 
 @Injectable({
@@ -17,7 +19,7 @@ export class DbService {
     third_case.default,
     fourth_case.default
   ];
-  
+
   private tasksSubject: BehaviorSubject<any[]> = new BehaviorSubject(this._tasks);
   private _taskVotes = {};
 
@@ -27,7 +29,7 @@ export class DbService {
   }, {});
   tasks$: Observable<any[]> = this.tasksSubject.asObservable();
 
-  constructor() {
+  constructor(private notificationsService: NotificationsService) {
   }
 
   vote(taskId: string, vote: boolean) {
@@ -50,11 +52,22 @@ export class DbService {
       const task = this.tasksMap[taskId];
       if (task.remaining_votes.length) {
         task.placed_votes.push(task.remaining_votes.pop());
-        this.autoVote(taskId);
       }
-      if (!task.remaining_votes.length) {
+      if (task.remaining_votes.length) {
+        this.autoVote(taskId);
+      } else {
         this._calculateTaskResults(task);
         this.tasksSubject.next(this._tasks);
+
+        const text = task.result.correct ? 'has been approved. You voted correctly.' : 'has been declined. You voted incorrectly.';
+
+        this.notificationsService.addNotification({
+          taskId: taskId,
+          type: NotificationType.VOTE,
+          result: task.result.correct,
+          subject: `Claim #${taskId}`,
+          text: text,
+        });
       }
     }, 5 * 1000);
   }

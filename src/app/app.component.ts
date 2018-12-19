@@ -22,7 +22,7 @@ export class AppComponent {
     this.matIconRegistry.addSvgIcon('close', this.sanitizer.bypassSecurityTrustResourceUrl('/assets/images/ic_small_close.svg'));
     this.matIconRegistry.addSvgIcon('info', this.sanitizer.bypassSecurityTrustResourceUrl('/assets/images/ic_small_info.svg'));
     this.matIconRegistry.addSvgIcon('more', this.sanitizer.bypassSecurityTrustResourceUrl('/assets/images/ic_small_more.svg'));
-    this.matIconRegistry.addSvgIcon('notifications', this.sanitizer.bypassSecurityTrustResourceUrl('/assets/images/ic_small_notifications.svg'));
+    this.matIconRegistry.addSvgIcon('notifications', this.sanitizer.bypassSecurityTrustResourceUrl('/assets/images/ic_small_notification.svg'));
     this.matIconRegistry.addSvgIcon('notifications_active', this.sanitizer.bypassSecurityTrustResourceUrl('/assets/images/ic_small_notification_active.svg'));
     this.matIconRegistry.addSvgIcon('star', this.sanitizer.bypassSecurityTrustResourceUrl('/assets/images/ic_small_star.svg'));
     this.matIconRegistry.addSvgIcon('star_empty', this.sanitizer.bypassSecurityTrustResourceUrl('/assets/images/ic_small_star_empty.svg'));

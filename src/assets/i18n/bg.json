@@ -34,14 +34,14 @@
       "female": "Жена"
     },
     "comparison": {
-       "below_expectations": "Под средното",
-       "as_expectations": "Според очакванията",
-       "above_expectations": "Над очакванията"
+      "below_expectations": "Под средното",
+      "as_expectations": "Според очакванията",
+      "above_expectations": "Над очакванията"
     },
     "profile": {
-       "adventure": "Приключенски",
-       "business": "Бизнес",
-       "tourist": "Турист"
+      "adventure": "Приключенски",
+      "business": "Бизнес",
+      "tourist": "Турист"
     }
   },
   "menu": {
@@ -50,110 +50,113 @@
     "trainings": "Обучения",
     "profile": "Профил"
   },
-  "pages":{
-      "task": {
-        "task": "Задача",
-        "time": "Кога",
-        "type": "Тип",
-        "location": "Място",
-        "event": "Събитие:",
-        "reward": "Награда:",
-        "details": {
-          "travel_profile": "Профил на пътуващия",
-          "gender": "Пол",
-          "risk_score": "Оценка на риска",
-          "task_information": "Информация за задачата",
-          "view_map": "Виж картата",
-          "hospital_info": "Информация за болницата",
-          "hospital": "Болница",
-          "bill_details": "Детайли за сметката",
-          "view_document": "Виж документ",
-          "support_docs": "Допълнителни документи",
-          "user_video": "Видео на потребителя"
-        },
-        "result_card": {
-            "your_vote": "Вашият вот:",
-            "tokens": "Токени",
-            "stake_outcome": "Резултат от залога",
-            "task_outcome": "Резултат от задачата:",
-            "task_status": "Статус на задачата:",
-            "paid": "Платена",
-            "voted_true": "Гласували за:",
-            "voted_false": "гласували против:"
-        },
-        "vote_true": "Гласувай за",
-        "vote_false": "Гласувай против",
-        "vote": "Гласувай"
+  "pages": {
+    "task": {
+      "task": "Задача",
+      "time": "Кога",
+      "type": "Тип",
+      "location": "Място",
+      "event": "Събитие:",
+      "reward": "Награда:",
+      "details": {
+        "travel_profile": "Профил на пътуващия",
+        "gender": "Пол",
+        "risk_score": "Оценка на риска",
+        "task_information": "Информация за задачата",
+        "view_map": "Виж картата",
+        "hospital_info": "Информация за болницата",
+        "hospital": "Болница",
+        "bill_details": "Детайли за сметката",
+        "view_document": "Виж документ",
+        "support_docs": "Допълнителни документи",
+        "user_video": "Видео на потребителя"
       },
-      "map": {
-        "title": "Карта на задачата",
-        "near_hospitals": "Близки болници",
-        "customer_choice": "Избор на клиента",
-        "decision_risk": "Риск от решението"
+      "result_card": {
+        "your_vote": "Вашият вот:",
+        "tokens": "Токени",
+        "stake_outcome": "Резултат от залога",
+        "task_outcome": "Резултат от задачата:",
+        "task_status": "Статус на задачата:",
+        "paid": "Платена",
+        "voted_true": "Гласували за:",
+        "voted_false": "гласували против:"
       },
-      "video": {
-        "title": "Видео на задачата",
-        "key_moments": "Основни моменти"
+      "vote_true": "Гласувай за",
+      "vote_false": "Гласувай против",
+      "vote": "Гласувай"
+    },
+    "map": {
+      "title": "Карта на задачата",
+      "near_hospitals": "Близки болници",
+      "customer_choice": "Избор на клиента",
+      "decision_risk": "Риск от решението"
+    },
+    "video": {
+      "title": "Видео на задачата",
+      "key_moments": "Основни моменти"
+    },
+    "tasks": {
+      "title": "Последни задачи",
+      "no_tasks": "Няма задачи."
+    },
+    "history": {
+      "activeTasksTitle": "Активни задачи",
+      "noActiveTasks": "Няма активни задачи.",
+      "completedTasksTitle": "Завършени задачи",
+      "noCompletedTasks": "Няма завършени задачи."
+    },
+    "trainings": {
+      "title": "Обучения",
+      "add_language": "Добави език",
+      "language": "Език",
+      "firstTraining": {
+        "name": "Входен изпит",
+        "effect": "Отключва обикновени задачи",
+        "language": "Бъгларски"
       },
-      "tasks": {
-        "title": "Последни задачи",
-        "no_tasks": "Няма задачи."
+      "secondTraining": {
+        "name": "Медицински изпит",
+        "effect": "Отключва обикновени задачи",
+        "language": "Бъгларски"
       },
-      "history": {
-        "activeTasksTitle": "Активни задачи",
-        "noActiveTasks": "Няма активни задачи.",
-        "completedTasksTitle": "Завършени задачи",
-        "noCompletedTasks": "Няма завършени задачи." 
-      },
-      "trainings": {
-        "title": "Обучения",
-        "add_language": "Добави език",
-        "language": "Език",
-        "firstTraining": {
-          "name": "Входен изпит",
-          "effect": "Отключва обикновени задачи",
-          "language": "Бъгларски"
-        },
-        "secondTraining": {
-          "name": "Медицински изпит",
-          "effect": "Отключва обикновени задачи",
-          "language": "Бъгларски"
-        },
-        "thirdTraining": {
-          "name": "Увеличи ХОР",
-          "effect": "Отключва медицински задачи",
-          "language": "Английки"
-        }
-      },
-      "profile": {
-        "labels": {
-          "level": "Ниво",
-          "status": "Текущ статус",
-          "account": "Потребител",
-          "profile_info": "Профилна информация",
-          "birth_date": "Дата на раждане",
-          "birth_city": "Роден град",
-          "verification": "Верификация",
-          "languages": "Езици",
-          "statistics": "Статистики",
-          "total_tokens": "Общо колибра токени",
-          "current_tokens": "Текущи колибра токени",
-          "vested_tokens": "Преведени колибра токени",
-          "withdrawable_tokens": "Изтегляеми колибра токени",
-          "deposit": "Депозирай",
-          "withdraw": "Изтегли"
-        },
-        "constants": {
-          "name": "John Doe",
-          "level": "5 - Експерт",
-          "to_next_level": "До следващото ниво:",
-          "verified_status": "Верифициран",
-          "status": "Чака се решение по задача 1762",
-          "birth_date": "18 Февруари 1976",
-          "birth_city": "Орландо",
-          "verification": "Лична карта",
-          "languages": "Български, Английски"
-        }
+      "thirdTraining": {
+        "name": "Увеличи ХОР",
+        "effect": "Отключва медицински задачи",
+        "language": "Английки"
       }
+    },
+    "profile": {
+      "labels": {
+        "level": "Ниво",
+        "status": "Текущ статус",
+        "account": "Потребител",
+        "profile_info": "Профилна информация",
+        "birth_date": "Дата на раждане",
+        "birth_city": "Роден град",
+        "verification": "Верификация",
+        "languages": "Езици",
+        "statistics": "Статистики",
+        "total_tokens": "Общо колибра токени",
+        "current_tokens": "Текущи колибра токени",
+        "vested_tokens": "Преведени колибра токени",
+        "withdrawable_tokens": "Изтегляеми колибра токени",
+        "deposit": "Депозирай",
+        "withdraw": "Изтегли"
+      },
+      "constants": {
+        "name": "John Doe",
+        "level": "5 - Експерт",
+        "to_next_level": "До следващото ниво:",
+        "verified_status": "Верифициран",
+        "status": "Чака се решение по задача 1762",
+        "birth_date": "18 Февруари 1976",
+        "birth_city": "Орландо",
+        "verification": "Лична карта",
+        "languages": "Български, Английски"
+      }
+    }
+  },
+  "notifications": {
+    "noNotifications": "No notifications."
   }
 }

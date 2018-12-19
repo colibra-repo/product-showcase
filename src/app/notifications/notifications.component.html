@@ -1,0 +1,28 @@
+<button mat-icon-button fxLayout="column" fxLayoutAlign="center center" [matMenuTriggerFor]="notificationsMenu">
+  <mat-icon [ngClass]="hasUnread ? 'shown' : 'hidden'" svgIcon="notifications_active"></mat-icon>
+  <mat-icon [ngClass]="hasUnread ? 'hidden' : 'shown'" svgIcon="notifications"></mat-icon>
+</button>
+<mat-menu #notificationsMenu="matMenu" [dir]="'ltr'">
+  <ng-container *ngIf="notifications$ && (notifications$ | async).length; else noNotifications">
+    <div *ngFor="let notification of notifications$ | async" fxLayout="row" fxLayoutAlign="start center"
+         fxLayoutGap="10px"
+         class="notification-item" [ngClass]="notification.read ? '' : 'unread'"
+         (click)="goToTask(notification)">
+      <div fxLayout="column" fxFlex="0 0 auto" fxLayoutAlign="center center" class="icon-container"
+           [ngClass]="notification.result === false ? 'failure' : 'success'">
+        <span *ngIf="notification.type === notificationTypes.INFO">#{{notification.taskId}}</span>
+        <ng-container *ngIf="notification.type === notificationTypes.VOTE">
+          <i *ngIf="notification.result === true" class="icon far fa-check-square"></i>
+          <i *ngIf="notification.result === false" class="icon far fa-window-close"></i>
+        </ng-container>
+      </div>
+      <div fxLayout="column">
+        <div><strong>{{notification.subject}}</strong> {{notification.text}}</div>
+        <div class="muted">{{notification.createdDate | timeAgo}}</div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #noNotifications>
+    <div class="empty-placeholder">{{'notifications.noNotifications' | translate}}</div>
+  </ng-template>
+</mat-menu>
