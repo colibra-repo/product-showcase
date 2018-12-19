@@ -8,26 +8,9 @@ import * as uuid from 'uuid/v4';
 })
 export class NotificationsService {
 
+  // TODO: Redirect notifications to completed cases when defined.
   private _notificationSubject: BehaviorSubject<Notification[]> = new BehaviorSubject(
     [
-      // {
-      //   taskId: '1984',
-      //   read: false,
-      //   type: NotificationType.VOTE,
-      //   result: true,
-      //   subject: 'Claim #1984',
-      //   text: 'has been approved. You voted correctly.',
-      //   createdDate: new Date()
-      // },
-      // {
-      //   taskId: '1984',
-      //   read: true,
-      //   type: NotificationType.VOTE,
-      //   result: false,
-      //   subject: 'Claim #1984',
-      //   text: 'has been declined. You voted incorrectly.',
-      //   createdDate: new Date()
-      // },
       {
         id: '99736793-9be9-485e-9653-3e0d31b7da38',
         taskId: '1984',
